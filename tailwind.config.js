@@ -15,6 +15,8 @@ module.exports = {
         dark: '#6A6A6A',
         DEFAULT: '#BFBFBF',
         light: '#F1F1F1',
+        search: '#E7E7E7',
+        seachText:'#858585'
       },
       black: {
         darkest: '#000000',
@@ -43,11 +45,13 @@ module.exports = {
     },
     borderRadius: {
       DEFAULT: '10px',
+      sm:'5px'
     },
 
     fontSize: {
       '14': ['14px', { lineHeight: '14px', letterSpacing: '0px' }],
       '16': ['16px', { lineHeight: '16px', letterSpacing: '0px' }],
+      '18': ['18px', { lineHeight: '18px', letterSpacing: '0px' }],
       '20': ['20px', { lineHeight: '20px', letterSpacing: '0px' }],
       '28': ['28px', { lineHeight: '28px', letterSpacing: '0px' }],
       '32': ['32px', { lineHeight: '32px', letterSpacing: '0px' }],

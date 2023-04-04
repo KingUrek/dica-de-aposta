@@ -10,19 +10,16 @@ type Props = {
   link: string;
 };
 
-export default function HeaderOption({
+export default function HeaderOptionDesktop({
   children,
   last = false,
   link='/'
 }: Props) {
   const menuClass = classNames(
-    'font-tittilium max-w-[200px] font-bold py-12 text-28 text-primary border-borderGray hover:text-primary-invert tablet:text-18 tablet:text-white tablet:border-b-0',
-    {
-      'border-b': !last,
-    }
+    'font-tittilium max-w-[200px] font-bold   text-primary-invert text-18 tablet:text-white ',
   );
   return (
-    <div className='px-20'>
+    <div className='pr-12 border-white hover:border-b-2 py-2 hover:pb-1 '>
       <Link href={link}>
         <p className={menuClass}>{children}</p>
       </Link>
