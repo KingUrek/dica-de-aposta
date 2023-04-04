@@ -14,7 +14,21 @@
 
 /* Your own custom utilities */
 
-.has-text-align-left {
+@layer base{
+
+  html{
+    font-size: 8px;
+  }
+  
+  img{
+    height:fit-content;
+  }
+
+  h3{
+    @apply text-28 tablet:text-40 font-tittilium font-bold;
+  }
+}
+/* .has-text-align-left {
   @apply text-left;
 }
 
@@ -101,4 +115,4 @@
 
 .wp-block-media-text {
   @apply grid grid-cols-2 gap-4;
-}
+} */
