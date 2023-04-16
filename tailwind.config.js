@@ -7,7 +7,8 @@ module.exports = {
   ],
   theme: {
     screens: {
-      tablet: '768px',
+      mobile: '425px',
+      tablet: '990px',
       desktop: '1440px',
     },
     colors: {
@@ -16,7 +17,7 @@ module.exports = {
         DEFAULT: '#BFBFBF',
         light: '#F1F1F1',
         search: '#E7E7E7',
-        seachText:'#858585'
+        seachText: '#858585',
       },
       black: {
         darkest: '#000000',
@@ -42,29 +43,35 @@ module.exports = {
       teal: '#008080',
       white: '#FFFFFF',
       borderGray: '#B9B9B9',
+      grayshOrange: '#EDE3CF',
     },
     borderRadius: {
       DEFAULT: '10px',
-      sm:'5px'
+      sm: '5px',
     },
 
     fontSize: {
-      '14': ['14px', { lineHeight: '14px', letterSpacing: '0px' }],
-      '16': ['16px', { lineHeight: '16px', letterSpacing: '0px' }],
-      '18': ['18px', { lineHeight: '18px', letterSpacing: '0px' }],
-      '20': ['20px', { lineHeight: '20px', letterSpacing: '0px' }],
-      '28': ['28px', { lineHeight: '28px', letterSpacing: '0px' }],
-      '32': ['32px', { lineHeight: '32px', letterSpacing: '0px' }],
-      '36': ['36px', { lineHeight: '36px', letterSpacing: '0px' }],
-      '40': ['40px', { lineHeight: '40px', letterSpacing: '0px' }],
-      '48': ['48px', { lineHeight: '48px', letterSpacing: '0px' }],
-      '64': ['64px', { lineHeight: '64px', letterSpacing: '0px' }],
+      10: ['10px', { lineHeight: '10px', letterSpacing: '0px' }],
+      14: ['14px', { lineHeight: '14px', letterSpacing: '0px' }],
+      16: ['16px', { lineHeight: '16px', letterSpacing: '0px' }],
+      18: ['18px', { lineHeight: '18px', letterSpacing: '0px' }],
+      20: ['20px', { lineHeight: '20px', letterSpacing: '0px' }],
+      28: ['28px', { lineHeight: '28px', letterSpacing: '0px' }],
+      32: ['32px', { lineHeight: '32px', letterSpacing: '0px' }],
+      36: ['36px', { lineHeight: '36px', letterSpacing: '0px' }],
+      40: ['40px', { lineHeight: '40px', letterSpacing: '0px' }],
+      48: ['48px', { lineHeight: '48px', letterSpacing: '0px' }],
+      64: ['64px', { lineHeight: '64px', letterSpacing: '0px' }],
+    },
+    backgroundImage:{
+      telegram:"url('/public/telegram-background.png)'"
     },
     extend: {
       fontFamily: {
         sans: ['var(--font-avenirNext)'],
         tittilium: ['var(--font-tittilium)'],
       },
+
     },
   },
   plugins: [],
