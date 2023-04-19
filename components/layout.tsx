@@ -10,6 +10,7 @@ export default function Layout({ preview, children }) {
         <Alert preview={preview} />
         <main>{children}</main>
       </div>
+      {/* @ts-expect-error Async Server Component */}
       <Footer />
     </>
   )
