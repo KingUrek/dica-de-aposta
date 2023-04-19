@@ -13,7 +13,7 @@ export default function Card({ logoUrl, link, type = 'normal' }: Props) {
     <Link href={link}>
       <div
         className={classNames(
-          ' border-primary-gray rounded py-2 grid place-items-center w-[64px]',
+          ' border-primary-gray relative rounded py-2 px-2 grid place-items-center w-[64px] h-[32px]',
           {
             'border-2 bg-primary-desatured': type === 'normal',
             'bg-primary-invert h-full': type === 'bonus',
@@ -21,12 +21,15 @@ export default function Card({ logoUrl, link, type = 'normal' }: Props) {
         )}
       >
         {type === 'normal' ? (
+          <div className=' relative h-full w-full'>
           <Image
-            width={42}
-            height={20}
+            className=' object-contain'
+            fill
             src={logoUrl}
             alt='logo casa de aposta'
-          ></Image>
+            ></Image>
+          </div>
+            
         ) : (
           <p className='font-16 text-white font-bold'>Bônus</p>
         )}

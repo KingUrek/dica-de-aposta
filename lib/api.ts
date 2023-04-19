@@ -230,21 +230,22 @@ export async function getFooter() {
   return data.crbThemeOptions;
 }
 
-export async function getBetHouses() {
+export async function getBookmakers() {
   const data = await fetchAPI(
     `
-    query BetHouses {
-      crbThemeOptions {
-        contactEmail
-        contactMobile
-        institutionalDescription
-        logoImage
-        urlDiscord
-        urlTelegram
-        urlTwitter
+    query Bookmakers {
+      bookmakers {
+        nodes {
+          databaseId
+          bookmakerColor
+          bookmakerUrl
+          title
+          bookmakerLogo
+          bookmakerHighlight
+        }
       }
     }
   `
   )
-  return data.crbThemeOptions;
+  return data.bookmakers.nodes;
 }
