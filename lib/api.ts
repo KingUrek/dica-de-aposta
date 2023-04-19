@@ -1,3 +1,5 @@
+import { sleep } from "./utils";
+
 const API_URL = process.env.WORDPRESS_API_URL as RequestInfo;
 async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
   const headers = { 'Content-Type': 'application/json' }
@@ -7,9 +9,8 @@ async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
       'Authorization'
     ] = `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`
   }
-
   // WPGraphQL Plugin must be enabled
-  const res = await fetch(API_URL, {
+  const res = await fetch(API_URL + 'graphql', {
     headers,
     method: 'POST',
     body: JSON.stringify({
@@ -208,4 +209,42 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
   if (data.posts.edges.length > 2) data.posts.edges.pop()
 
   return data
+}
+
+export async function getFooter() {
+  const data = await fetchAPI(
+    `
+    query Footer {
+      crbThemeOptions {
+        contactEmail
+        contactMobile
+        institutionalDescription
+        logoImage
+        urlDiscord
+        urlTelegram
+        urlTwitter
+      }
+    }
+  `
+  )
+  return data.crbThemeOptions;
+}
+
+export async function getBetHouses() {
+  const data = await fetchAPI(
+    `
+    query BetHouses {
+      crbThemeOptions {
+        contactEmail
+        contactMobile
+        institutionalDescription
+        logoImage
+        urlDiscord
+        urlTelegram
+        urlTwitter
+      }
+    }
+  `
+  )
+  return data.crbThemeOptions;
 }
