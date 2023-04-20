@@ -2,7 +2,7 @@ import { getBookmakers } from '../../lib/api';
 import Container from '../container';
 import Card from './Card';
 
-export default async function BetHouseCards() {
+export default async function BetHouseCardsUi() {
   const data = await getBookmakers();
   return (
     <div className=' bg-azure'>
