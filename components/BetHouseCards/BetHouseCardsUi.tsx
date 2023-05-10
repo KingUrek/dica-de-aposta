@@ -5,7 +5,7 @@ import Card from './Card';
 export default async function BetHouseCardsUi() {
   const data = await getBookmakers();
   return (
-    <div className=' bg-azure'>
+    <div className='bg-azure'>
       <Container className='bg-azure py-12 '>
         <div className='flex gap-4'>
           {data.slice(0,4).map(({ databaseId, bookmakerUrl, bookmakerLogo }) => (
