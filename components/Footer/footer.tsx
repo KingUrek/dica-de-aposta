@@ -9,11 +9,14 @@ import ToTopButton from './ToTopButton';
 import { getFooter } from '../../lib/api';
 import Link from 'next/link';
 import InnerHtmlComponent from '../InnerHtmlComponent';
+import Container from '../container';
 
 export default async function FooterUi() {
   const data = await getFooter();
   return (
-    <footer className='bg-primary pt-12 px-20 pb-5 tablet:px-[124px] tablet:pt-24'>
+    <footer className='bg-primary pt-12 pb-5 tablet:pt-24'>
+      <Container>
+
       <div className='pb-5 tablet:pb-8 border-b border-white mb-20 max-w-[450px] tablet:mb-16'>
         <Image src={Logo} alt='logo'></Image>
       </div>
@@ -55,7 +58,9 @@ export default async function FooterUi() {
       <p className='text-10 text-white'>
         Desenvolvido por <strong>Apiki Wordpress</strong> | Todos os direitos
         reservados.
-      </p>
+        </p>
+      </Container>
+        
       </footer>
       
   );
