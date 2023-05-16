@@ -3,7 +3,7 @@ import BetHouseCards from "../components/BetHouseCards/Index";
 import Footer from "../components/Footer";
 import Header from "../components/Header/Header";
 import CardsList from "../components/SportsCards/CardsList";
-import TelegramGroup from "../components/TelegramGroup";
+import TelegramGroup from "../components/TelegramGroup/ui";
 
 export default function Page() {
   return (

@@ -249,3 +249,16 @@ export async function getBookmakers() {
   )
   return data.bookmakers.nodes;
 }
+
+export async function getTelegramLink() {
+    const data = await fetchAPI(
+      `
+      query Footer {
+        crbThemeOptions {
+          urlTelegram
+        }
+      }
+    `
+    )
+    return data.crbThemeOptions;
+}
