@@ -16,30 +16,32 @@ export default async function FooterUi() {
   return (
     <footer className='bg-primary pt-12 pb-5 tablet:pt-24'>
       <Container>
-
+        <Link href={'/'}>
       <div className='pb-5 tablet:pb-8 border-b border-white mb-20 max-w-[450px] tablet:mb-16'>
         <Image src={Logo} alt='logo'></Image>
-      </div>
+          </div>
+        </Link>
+          
       <div className='tablet:flex tablet:justify-between border-b border-white mb-5'>
         <div className='mb-10 tablet:max-w-[340px]'>
-          <p className='text-16 font-bold text-grayshOrange [&strong]:text-teal mb-5 tablet:mb-8'>
+          <p className='text-16 font-bold text-white [&strong]:text-teal mb-5 tablet:mb-8'>
             Institucional
           </p>
           <InnerHtmlComponent className="text-white">{data.institutionalDescription}</InnerHtmlComponent>
         </div>
         <div className='mb-10 tablet:max-w-[340px]'>
-          <p className='text-16 font-bold text-grayshOrange  mb-5 tablet:mb-8'>Contato</p>
-          <div className='flex items-center gap-7 mb-8'>
+          <p className='text-16 font-bold text-white  mb-5 tablet:mb-8'>Contato</p>
+          <div className='flex items-center gap-7 mb-5'>
             <ZapIcon />
             <span className='text-white'>{data.contactMobile}</span>
           </div>
-          <div className='flex items-center gap-7 mb-8'>
+          <div className='flex items-center gap-7 mb-5'>
             <MailIcon />
             <span className='text-white'>{data.contactEmail}</span>
           </div>
         </div>
         <div className='tablet:max-w-[340px]'>
-          <p className='text-16 font-bold text-grayshOrange  mb-6'>Siga-nos</p>
+          <p className='text-16 font-bold text-white mb-5 tablet:mb-8'>Siga-nos</p>
           <div className='flex gap-7 pb-10 tablet:mb-8 relative'>
             <Link href={data.urlTelegram}>
               <TelegramIcon className="tablet:scale-[1.3]"></TelegramIcon>
@@ -55,7 +57,7 @@ export default async function FooterUi() {
         </div>
       </div>
 
-      <p className='text-10 text-white'>
+      <p className='text-10 text-white  text-center'>
         Desenvolvido por <strong>Apiki Wordpress</strong> | Todos os direitos
         reservados.
         </p>

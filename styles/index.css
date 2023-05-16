@@ -28,7 +28,7 @@
     height:fit-content;
   }
 
-  h3{
+  h3,h2{
     @apply text-28 tablet:text-40 font-tittilium font-bold;
   }
 }
