@@ -5,6 +5,7 @@ import CardsList from '../components/SportsCards/CardsList';
 import TelegramGroup from '../components/TelegramGroup';
 import BestBookmaker from '../components/BestBookmaker';
 import PortelaTips from '../components/PortelaTips';
+import BookMakers from '../components/BookMakers';
 
 export default function Page() {
   return (
@@ -15,7 +16,8 @@ export default function Page() {
         <CardsList></CardsList>
         <TelegramGroup></TelegramGroup>
         <BestBookmaker></BestBookmaker>
-        <PortelaTips></PortelaTips>
+      <PortelaTips></PortelaTips>
+      <BookMakers></BookMakers>
         <div className='h-[200px]'></div>
       {/* </div> */}
       <Footer></Footer>

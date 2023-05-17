@@ -5,14 +5,23 @@ type Props = {
   children: ReactNode,
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void,
   link?: string
-  className?:string
+  className?: string
+  type?: 'outside'|'inside'
 }
 
-export default function Button({ children, onClick, link, className }: Props) {
+export default function Button({ children, onClick, link, className, type }: Props) {
   
   if (link) {
+    if (type === 'inside') {
+      return <Link href={link}>
+        <div className={"text-16 tablet:text-20 text-primary-gray rounded py-8 tablet:py-12 text-center font-bold border-primary-gray border-2 tablet:max-w-[300px] m-auto" + " " + className}>
+          {children}
+        </div>
+
+    </Link>
+    }
     return <Link href={link}>
-      <div className={"text-16 bg-primary-invert text-white rounded py-8 text-center font-bold" + " " + className}>
+      <div className={"text-16 tablet:text-20 bg-primary-invert text-white rounded py-8 tablet:py-12 text-center font-bold" + " " + className}>
         {children}
       </div>
 

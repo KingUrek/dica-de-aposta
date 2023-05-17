@@ -44,6 +44,7 @@ module.exports = {
       white: '#FFFFFF',
       borderGray: '#B9B9B9',
       grayshOrange: '#EDE3CF',
+      deepblue: '#094452',
     },
     borderRadius: {
       DEFAULT: '10px',
@@ -71,6 +72,10 @@ module.exports = {
         sans: ['var(--font-avenirNext)'],
         tittilium: ['var(--font-tittilium)'],
       },
+
+      spacing:{
+        13:'3.25rem'
+      }
 
     },
   },

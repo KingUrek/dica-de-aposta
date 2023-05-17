@@ -242,6 +242,11 @@ export async function getBookmakers() {
           title
           bookmakerLogo
           bookmakerHighlight
+          bookmakerAdventages {
+            adventage
+          }
+          bookmakerDescription
+          bookmakerBonus
         }
       }
     }
