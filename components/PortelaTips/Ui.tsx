@@ -1,8 +1,10 @@
 import React from 'react';
 import Container from '../container';
 import Button from '../ui/button';
+import { getFooter } from '../../lib/api';
 
 export default async function PortelaTipsUi() {
+  const {urlTips} = await getFooter();
   return (
     <Container>
       <div className='rounded bg-primary'>
@@ -11,7 +13,7 @@ export default async function PortelaTipsUi() {
             Tenha exclusividade de dicas no Portela Tips
           </p>
           <div className='max-w-[300px] m-auto'>
-          <Button link='portelatips'>Quero fazer parte</Button>
+          <Button link={urlTips}>Quero fazer parte</Button>
 
           </div>
         </div>

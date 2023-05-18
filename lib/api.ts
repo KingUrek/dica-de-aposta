@@ -223,6 +223,7 @@ export async function getFooter() {
         urlDiscord
         urlTelegram
         urlTwitter
+        urlTips
       }
     }
   `
