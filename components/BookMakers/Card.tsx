@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { parseAdvantages } from '../../lib/utils';
 import ShieldIcon from '../../public/icons/ShieldIcon.svg';
 import PresentIcon from '../../public/icons/PresentIcon.svg';
+import InnerHtmlComponent from '../InnerHtmlComponent';
 
 export default function Card({
   bookmakerLogo,
@@ -30,15 +31,15 @@ export default function Card({
             {parseAdvantages(bookmakerAdventages).map((ad) => {
               return (
                 <div key={ad} className='flex gap-3 tablet:gap-4'>
-                  <ShieldIcon style={{width:18}}></ShieldIcon>
+                  <ShieldIcon style={{flexShrink: 0}}></ShieldIcon>
                   <p className='text-14 text-white tablet:text-16'>{ad}</p>
                 </div>
               );
             })}
             {bookmakerBonus && (
               <div className='flex gap-3 mt-7'>
-                <PresentIcon style={{width:21}}></PresentIcon>
-                <p className='text-14 text-white'>{bookmakerBonus}</p>
+                <PresentIcon style={{flexShrink: 0}}></PresentIcon>
+                <InnerHtmlComponent className='text-14 text-white [&_strong]:text-20'>{bookmakerBonus}</InnerHtmlComponent>
               </div>
             )}
           </div>

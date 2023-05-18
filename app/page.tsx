@@ -17,8 +17,10 @@ export default function Page() {
         <TelegramGroup></TelegramGroup>
         <BestBookmaker></BestBookmaker>
       <PortelaTips></PortelaTips>
-      <BookMakers></BookMakers>
-        <div className='h-[200px]'></div>
+      <div className='bg-primary bg-opacity-5 pt-8 pb-28 tablet:pt-22'>
+        <BookMakers></BookMakers>
+
+      </div>
       {/* </div> */}
       <Footer></Footer>
     </>

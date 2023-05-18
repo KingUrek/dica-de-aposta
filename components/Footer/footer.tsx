@@ -17,7 +17,7 @@ export default async function FooterUi() {
     <footer className='bg-primary pt-12 pb-5 tablet:pt-24'>
       <Container>
         <Link href={'/'}>
-      <div className='pb-5 tablet:pb-8 border-b border-white mb-20 max-w-[450px] tablet:mb-16'>
+      <div className='pb-5 tablet:pb-8 border-b border-white mb-15 max-w-[450px] tablet:mb-16'>
         <Image src={Logo} alt='logo'></Image>
           </div>
         </Link>
