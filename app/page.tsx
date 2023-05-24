@@ -1,7 +1,7 @@
 import BetHouseCards from '../components/BookmakerCards/Index';
 import Footer from '../components/Footer';
 import Header from '../components/Header/Header';
-import CardsList from '../components/SportsCards/CardsList';
+import SportsCards from '../components/SportsCards';
 import TelegramGroup from '../components/TelegramGroup';
 import BestBookmaker from '../components/BestBookmaker';
 import PortelaTips from '../components/PortelaTips';
@@ -14,7 +14,7 @@ export default function Page() {
       <Header></Header>
       {/* <div className='flex gap-[56px]'> */}
       <BetHouseCards></BetHouseCards>
-      <CardsList></CardsList>
+      <SportsCards></SportsCards>
       <HighlightTip></HighlightTip>
       <TelegramGroup></TelegramGroup>
       <BestBookmaker></BestBookmaker>

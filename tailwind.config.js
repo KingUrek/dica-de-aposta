@@ -53,6 +53,7 @@ module.exports = {
 
     fontSize: {
       10: ['10px', { lineHeight: '10px', letterSpacing: '0px' }],
+      12: ['12px', { lineHeight: '12px', letterSpacing: '0px' }],
       14: ['14px', { lineHeight: '14px', letterSpacing: '0px' }],
       16: ['16px', { lineHeight: '16px', letterSpacing: '0px' }],
       18: ['18px', { lineHeight: '18px', letterSpacing: '0px' }],
