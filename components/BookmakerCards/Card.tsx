@@ -6,17 +6,19 @@ type Props = {
   logoUrl: string;
   link: string;
   type?: 'normal' | 'bonus';
+  index?: number;
 };
 
-export default function Card({ logoUrl, link, type = 'normal' }: Props) {
+export default function Card({ logoUrl, link, type = 'normal', index }: Props) {
   return (
     <Link href={link}>
       <div
         className={classNames(
-          ' border-primary-gray relative rounded py-2 px-2 grid place-items-center w-[64px] h-[32px]',
+          ' border-primary-gray relative rounded py-2 px-2 grid place-items-center w-[64px] h-[32px] ',
           {
-            'border-2 bg-primary-desatured': type === 'normal',
-            'bg-primary-invert h-full': type === 'bonus',
+            'border-2 bg-primary-desatured tablet:w-[90px] tablet:h-[46px]': type === 'normal',
+            'bg-primary-invert h-full tablet:w-[140px] tablet:h-[46px] tablet:font-20': type === 'bonus',
+            'tablet:hidden':index===0
           }
         )}
       >
