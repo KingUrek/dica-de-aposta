@@ -15,14 +15,14 @@ export default function Page() {
       <Header></Header>
       <div className='tablet:bg-azure'>
         <div
-          className={`tablet:container tablet:mx-auto tablet:px-18 tablet:bg-azure tablet:flex tablet:flex-row-reverse`}
+          className={`tablet:container tablet:mx-auto tablet:px-18 tablet:bg-azure tablet:flex tablet:flex-row-reverse desktop:px-[125px]`}
         >
             <div className='bg-azure py-12'>
-              <Container className='tablet:px-0'>
+              <Container className='tablet:px-0 desktop:px-0'>
                 <BetHouseCards></BetHouseCards>
               </Container>
             </div>
-            <Container className='tablet:px-0 tablet:flex items-center'>
+            <Container className='tablet:px-0 tablet:flex items-center desktop:px-0'>
               <div className='mt-8 mb-12 tablet:m-0'>
                 <SportsCards></SportsCards>
               </div>

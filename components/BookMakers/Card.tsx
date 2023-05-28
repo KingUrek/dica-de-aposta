@@ -15,7 +15,7 @@ export default function Card({
   bookmakerDescription
 }) {
   return (
-    <div className='rounded bg-deepblue max-w-[172px] tablet:max-w-[365px] tablet:last-of-type:hidden pt-5'>
+    <div className='rounded bg-deepblue max-w-[172px] tablet:max-w-[365px] desktop:w-[365px] tablet:last-of-type:hidden pt-5'>
       <div className='bg-primary rounded-b pb-7 h-full'>
         <div className='px-5 h-full flex flex-col'>
           <div className=' relative w-[84px] h-[50px]'>
@@ -37,9 +37,9 @@ export default function Card({
               );
             })}
             {bookmakerBonus && (
-              <div className='flex gap-3 mt-7'>
+              <div className='flex gap-3 mt-7 tablet:mt-0'>
                 <PresentIcon style={{flexShrink: 0}}></PresentIcon>
-                <InnerHtmlComponent className='text-14 text-white [&_strong]:text-20'>{bookmakerBonus}</InnerHtmlComponent>
+                <InnerHtmlComponent className='text-14 text-white [&_strong]:!text-20 [&_p]:!text-16'>{bookmakerBonus}</InnerHtmlComponent>
               </div>
             )}
           </div>

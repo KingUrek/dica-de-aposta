@@ -9,7 +9,7 @@ export default async function BookMakersUi() {
   return (
     <Container>
       <h2 className=' text-primary mb-12 tablet:mb-[56px] text-center tablet:text-40'>Casas de Aposta</h2>
-      <div className='grid grid-cols-2 gap-x-6 gap-y-12 tablet:grid-cols-3 mb-12 tablet:mb-20'>
+      <div className='grid grid-cols-2 gap-x-6 gap-y-12 tablet:gap-x-12 tablet:grid-cols-3 mb-12 tablet:mb-20 desktop:flex desktop:justify-between'>
         {data.slice(0, 4).map((bookMaker) => {
           return <Card key={bookMaker.databaseId} {...bookMaker}></Card>;
         })}
