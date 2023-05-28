@@ -7,20 +7,34 @@ import BestBookmaker from '../components/BestBookmaker';
 import PortelaTips from '../components/PortelaTips';
 import BookMakers from '../components/BookMakers';
 import HighlightTip from '../components/HighlightTip';
+import Container from '../components/ui/container';
 
 export default function Page() {
   return (
     <>
       <Header></Header>
-      {/* <div className='flex gap-[56px]'> */}
-      <BetHouseCards></BetHouseCards>
-      <SportsCards></SportsCards>
+      <div className='tablet:bg-azure'>
+        <div
+          className={`tablet:container tablet:mx-auto tablet:px-18 tablet:bg-azure tablet:flex tablet:flex-row-reverse`}
+        >
+            <div className='bg-azure py-12'>
+              <Container className='tablet:px-0'>
+                <BetHouseCards></BetHouseCards>
+              </Container>
+            </div>
+            <Container className='tablet:px-0 tablet:flex items-center'>
+              <div className='mt-8 mb-12 tablet:m-0'>
+                <SportsCards></SportsCards>
+              </div>
+            </Container>
+        </div>
+      </div>
+
       <HighlightTip></HighlightTip>
       <TelegramGroup></TelegramGroup>
       <BestBookmaker></BestBookmaker>
       <div className='bg-primary bg-opacity-5 pb-18 pt-9 tablet:pt-22'>
         <PortelaTips></PortelaTips>
-
       </div>
       <div className='bg-primary bg-opacity-5 pt-8 pb-28 tablet:pt-22 tablet:pb-[96px]'>
         <BookMakers></BookMakers>

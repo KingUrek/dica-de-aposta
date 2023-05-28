@@ -1,5 +1,5 @@
 import React from 'react'
-import Container from '../container'
+import Container from '../ui/container'
 import classNames from 'classnames'
 
 export default function Skeleton() {

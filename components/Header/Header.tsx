@@ -9,7 +9,7 @@ import classNames from 'classnames';
 import HeaderOptionDesktop from './HeaderOptionDesktop';
 import Search from './Search';
 import SearchIcon from '../../public/icons/search.svg';
-import Container from '../container';
+import Container from '../ui/container';
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const menuOptions = [

@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '../container';
+import Container from '../ui/container';
 import SoccerLogo from '../../public/mock/soccerLogo.png';
 //TODO: remover Logo mock
 import LogoMock from '../../public/logo.png';

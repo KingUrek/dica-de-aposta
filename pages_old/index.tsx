@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { GetStaticProps } from 'next'
-import Container from '../components/container'
+import Container from '../components/ui/container'
 import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
 import Intro from '../components/intro'

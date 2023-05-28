@@ -9,7 +9,7 @@ import ToTopButton from './ToTopButton';
 import { getFooter } from '../../lib/api';
 import Link from 'next/link';
 import InnerHtmlComponent from '../InnerHtmlComponent';
-import Container from '../container';
+import Container from '../ui/container';
 
 export default async function FooterUi() {
   const data = await getFooter();

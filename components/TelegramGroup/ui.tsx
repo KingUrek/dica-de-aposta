@@ -1,4 +1,4 @@
-import Container from '../container';
+import Container from '../ui/container';
 import React from 'react';
 import Button from '../ui/button';
 import TelegramBackground from '../../public/telegram-background.png';

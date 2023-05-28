@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '../container';
+import Container from '../ui/container';
 import Card from './Card';
 import { getBookmakers } from '../../lib/api';
 import Button from '../ui/button';
