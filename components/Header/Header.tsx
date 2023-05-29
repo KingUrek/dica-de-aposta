@@ -20,8 +20,8 @@ export default function Header() {
   ];
   return (
     <header className='bg-primary'>
-      <Container>
-        <div className=' py-5 tablet:py-11 flex justify-between items-center gap-10 tablet:justify-normal tablet:gap-[48px]'>
+      <Container id="header">
+        <div  className=' py-5 tablet:py-11 flex justify-between items-center gap-10 tablet:justify-normal tablet:gap-[48px] '>
           <Image placeholder='blur' priority src={Logo} alt='logo'></Image>
           <div className='flex gap-[26px] items-center tablet:hidden'>
             <SearchIcon className='text-white'></SearchIcon>
