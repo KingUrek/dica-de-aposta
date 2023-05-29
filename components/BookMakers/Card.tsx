@@ -16,8 +16,8 @@ export default function Card({
 }) {
   return (
     <div className='rounded bg-deepblue max-w-[172px] tablet:max-w-[365px] desktop:w-[365px] tablet:last-of-type:hidden pt-5'>
-      <div className='bg-primary rounded-b pb-7 h-full'>
-        <div className='px-5 h-full flex flex-col'>
+      <div className='bg-primary rounded-b pb-7 h-full desktop:pb-18 desktop:pt-7'>
+        <div className='px-5 h-full flex flex-col desktop:px-11'>
           <div className=' relative w-[84px] h-[50px]'>
             <Image
               alt='bookMaker logo'
@@ -47,7 +47,7 @@ export default function Card({
           <p className=' text-white text-16 mb-16 hidden tablet:block'>
             {bookmakerDescription}
             </p>
-          <div className='mt-auto'>
+          <div className='mt-auto desktop:w-[298px] desktop:mx-auto'>
             <Button link={bookmakerUrl||'/'}>{title}</Button>
           </div>
         </div>
