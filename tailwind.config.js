@@ -9,6 +9,7 @@ module.exports = {
     screens: {
       mobile: '428px',
       tablet: '990px',
+      tabletg: '1280px',
       desktop: '1440px',
     },
     colors: {
@@ -52,18 +53,18 @@ module.exports = {
     },
 
     fontSize: {
-      10: ['10px', { lineHeight: '10px', letterSpacing: '0px' }],
-      12: ['12px', { lineHeight: '12px', letterSpacing: '0px' }],
-      14: ['14px', { lineHeight: '14px', letterSpacing: '0px' }],
-      16: ['16px', { lineHeight: '16px', letterSpacing: '0px' }],
-      18: ['18px', { lineHeight: '18px', letterSpacing: '0px' }],
-      20: ['20px', { lineHeight: '20px', letterSpacing: '0px' }],
-      28: ['28px', { lineHeight: '28px', letterSpacing: '0px' }],
-      32: ['32px', { lineHeight: '32px', letterSpacing: '0px' }],
-      36: ['36px', { lineHeight: '36px', letterSpacing: '0px' }],
-      40: ['40px', { lineHeight: '40px', letterSpacing: '0px' }],
-      48: ['48px', { lineHeight: '48px', letterSpacing: '0px' }],
-      64: ['64px', { lineHeight: '64px', letterSpacing: '0px' }],
+      10: ['10px', { lineHeight: '135%', letterSpacing: '0px' }],
+      12: ['12px', { lineHeight: '135%', letterSpacing: '0px' }],
+      14: ['14px', { lineHeight: '135%', letterSpacing: '0px' }],
+      16: ['16px', { lineHeight: '135%', letterSpacing: '0px' }],
+      18: ['18px', { lineHeight: '135%', letterSpacing: '0px' }],
+      20: ['20px', { lineHeight: '135%', letterSpacing: '0px' }],
+      28: ['28px', { lineHeight: '135%', letterSpacing: '0px' }],
+      32: ['32px', { lineHeight: '135%', letterSpacing: '0px' }],
+      36: ['36px', { lineHeight: '135%', letterSpacing: '0px' }],
+      40: ['40px', { lineHeight: '135%', letterSpacing: '0px' }],
+      48: ['48px', { lineHeight: '135%', letterSpacing: '0px' }],
+      64: ['64px', { lineHeight: '135%', letterSpacing: '0px' }],
     },
     backgroundImage:{
       telegram:"url('/public/telegram-background.png)'"

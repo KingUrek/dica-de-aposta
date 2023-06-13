@@ -17,11 +17,12 @@ export default function Card({
   const bookmakerLogo = featuredImage.node.sourceUrl
   return (
     <div className='rounded bg-deepblue max-w-[172px] tablet:max-w-[365px] desktop:w-[365px] tablet:last-of-type:hidden pt-5'>
-      <div className='bg-primary rounded-b pb-7 h-full desktop:pb-18 desktop:pt-7'>
+      <div className='bg-primary-desatured rounded-b pb-7 h-full desktop:pb-18 desktop:pt-7'>
         <div className='px-5 h-full flex flex-col desktop:px-11'>
           <div className=' relative w-[84px] h-[50px]'>
             <Image
-              alt='bookMaker logo'
+              alt={featuredImage.node.altText}
+              title={featuredImage.node.title}
               src={bookmakerLogo}
               fill
               className=' object-contain'
