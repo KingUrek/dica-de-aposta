@@ -23,7 +23,7 @@ export default function Page() {
               <BetHouseCards></BetHouseCards>
             </Container>
           </div>
-          <Container className='tablet:px-0 tablet:flex items-center desktop:px-0'>
+          <Container className='tablet:px-0 tablet:flex items-center desktop:!px-0'>
             <div className='mt-8 mb-12 tablet:m-0'>
               <SportsCards></SportsCards>
             </div>
@@ -34,11 +34,11 @@ export default function Page() {
       <HighlightTip></HighlightTip>
       <TelegramGroup></TelegramGroup>
       <BestBookmaker></BestBookmaker>
-      <div className='bg-primary mb-32 bg-opacity-5 pb-18 pt-9 tablet:pt-22 relative'>
+      <div className='bg-primary mb-32 bg-opacity-5 pb-18 pt-9 tablet:pt-22 relative tablet:pb-[116px] tablet:mb-[212px]'>
         <div className=' mb-28'>
           <TopGuesses></TopGuesses>
         </div>
-        <div className='absolute left-[50%] translate-x-(-50%)'>
+        <div className='tablet:absolute tablet:left-[50%] tablet:translate-x-[-50%] w-full'>
           <PortelaTips></PortelaTips>
         </div>
       </div>

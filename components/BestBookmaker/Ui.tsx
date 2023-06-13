@@ -7,7 +7,6 @@ import Card from './Card';
 
 export default async function BestBookmakerUi() {
   const data = await getBookmakers("best");
-  // const data = []
 
   return (
     <div className=' tablet:hidden'>
