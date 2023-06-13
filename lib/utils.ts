@@ -3,5 +3,6 @@ export function sleep(ms) {
 }
 
 export function parseAdvantages(bookmakerAdventages) {
+  
   return bookmakerAdventages.map(({adventage}) => adventage)
 }

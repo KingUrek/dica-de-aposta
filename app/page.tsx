@@ -8,6 +8,7 @@ import PortelaTips from '../components/PortelaTips';
 import BookMakers from '../components/BookMakers';
 import HighlightTip from '../components/HighlightTip';
 import Container from '../components/ui/container';
+import TopGuesses from '../components/TopGuesses';
 
 export default function Page() {
   return (
@@ -17,24 +18,29 @@ export default function Page() {
         <div
           className={`tablet:container tablet:mx-auto tablet:px-18 tablet:bg-azure tablet:flex tablet:flex-row-reverse desktop:px-[125px]`}
         >
-            <div className='bg-azure py-12'>
-              <Container className='tablet:px-0 desktop:px-0'>
-                <BetHouseCards></BetHouseCards>
-              </Container>
-            </div>
-            <Container className='tablet:px-0 tablet:flex items-center desktop:px-0'>
-              <div className='mt-8 mb-12 tablet:m-0'>
-                <SportsCards></SportsCards>
-              </div>
+          <div className='bg-azure py-12'>
+            <Container className='tablet:px-0 desktop:!px-0'>
+              <BetHouseCards></BetHouseCards>
             </Container>
+          </div>
+          <Container className='tablet:px-0 tablet:flex items-center desktop:px-0'>
+            <div className='mt-8 mb-12 tablet:m-0'>
+              <SportsCards></SportsCards>
+            </div>
+          </Container>
         </div>
       </div>
 
       <HighlightTip></HighlightTip>
       <TelegramGroup></TelegramGroup>
       <BestBookmaker></BestBookmaker>
-      <div className='bg-primary bg-opacity-5 pb-18 pt-9 tablet:pt-22'>
-        <PortelaTips></PortelaTips>
+      <div className='bg-primary mb-32 bg-opacity-5 pb-18 pt-9 tablet:pt-22 relative'>
+        <div className=' mb-28'>
+          <TopGuesses></TopGuesses>
+        </div>
+        <div className='absolute left-[50%] translate-x-(-50%)'>
+          <PortelaTips></PortelaTips>
+        </div>
       </div>
       <div className='bg-primary bg-opacity-5 pt-8 pb-28 tablet:pt-22 tablet:pb-[96px]'>
         <BookMakers></BookMakers>

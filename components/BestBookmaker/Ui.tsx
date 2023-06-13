@@ -6,7 +6,8 @@ import { getBookmakers } from '../../lib/api';
 import Card from './Card';
 
 export default async function BestBookmakerUi() {
-  const data = await getBookmakers();
+  const data = await getBookmakers("best");
+  // const data = []
 
   return (
     <div className=' tablet:hidden'>
@@ -16,8 +17,8 @@ export default async function BestBookmakerUi() {
         </h2>
       </Container>
       <Caroulsel>
-        {data.map(({ databaseId, bookmakerUrl, bookmakerLogo }) => (
-          <Card key={databaseId} link={bookmakerUrl} logoUrl={bookmakerLogo} />
+        {data.map(({ databaseId, bookmakerUrl, featuredImage }) => (
+          <Card key={databaseId} link={bookmakerUrl} logoUrl={featuredImage?.node?.sourceUrl} />
         ))}
       </Caroulsel>
     </div>

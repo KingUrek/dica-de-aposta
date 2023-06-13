@@ -10,13 +10,12 @@ type Props = {
 export default function Carousel({ children }: Props) {
   const [padding, setPadding] = useState(0)
   function getPadding() {
-    const containerPadding = 36
     const header = document.getElementById('header')
     if (!header) {
       return null
     }
     const blockWidth = header.clientWidth
-    setPadding((window.innerWidth - blockWidth) / 2 + containerPadding)
+    setPadding((window.innerWidth - blockWidth) / 2)
   }
   useEffect(() => {
     getPadding()

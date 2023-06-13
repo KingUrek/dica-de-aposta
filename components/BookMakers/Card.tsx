@@ -7,13 +7,14 @@ import PresentIcon from '../../public/icons/PresentIcon.svg';
 import InnerHtmlComponent from '../InnerHtmlComponent';
 
 export default function Card({
-  bookmakerLogo,
   bookmakerAdventages,
   bookmakerBonus,
   bookmakerUrl,
   title,
-  bookmakerDescription
+  bookmakerDescription,
+  featuredImage
 }) {
+  const bookmakerLogo = featuredImage.node.sourceUrl
   return (
     <div className='rounded bg-deepblue max-w-[172px] tablet:max-w-[365px] desktop:w-[365px] tablet:last-of-type:hidden pt-5'>
       <div className='bg-primary rounded-b pb-7 h-full desktop:pb-18 desktop:pt-7'>

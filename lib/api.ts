@@ -231,23 +231,35 @@ export async function getFooter() {
   return data.crbThemeOptions;
 }
 
-export async function getBookmakers() {
+export async function getBookmakers(homeplace?:string) {
+  const query = homeplace? `(where: {homePlace: "${homeplace}"})`:''
   const data = await fetchAPI(
     `
-    query Bookmakers {
-      bookmakers {
+    query bookmakersInfo {
+      bookmakers${query} {
         nodes {
           databaseId
-          bookmakerColor
-          bookmakerUrl
           title
-          bookmakerLogo
-          bookmakerHighlight
+          bookmakerUrl
+          featuredImage {
+            node {
+              databaseId
+              altText
+              title
+              description
+              sourceUrl
+              caption
+              sizes
+              fileSize
+              srcSet
+            }
+          }
+          bookmakerBonus
+          bookmakerDescription
+          bookmakerId
           bookmakerAdventages {
             adventage
           }
-          bookmakerDescription
-          bookmakerBonus
         }
       }
     }

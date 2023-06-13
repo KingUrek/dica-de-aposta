@@ -3,13 +3,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 type Props = {
-  logoUrl: string;
+  logoUrl:string
   link: string;
   type?: 'normal' | 'bonus';
   index?: number;
+  numberOfCards?:number
 };
 
-export default function Card({ logoUrl, link, type = 'normal', index }: Props) {
+export default function Card({  link, type = 'normal', index, logoUrl,numberOfCards }: Props) {
+
   return (
     <Link href={link}>
       <div
@@ -18,7 +20,7 @@ export default function Card({ logoUrl, link, type = 'normal', index }: Props) {
           {
             'border-2 bg-primary-desatured tablet:w-[90px] tablet:h-[46px]': type === 'normal',
             'bg-primary-invert h-full tablet:w-[140px] tablet:h-[46px] tablet:font-20': type === 'bonus',
-            'tablet:hidden':index===0
+            'tablet:hidden':index===0 && numberOfCards >= 4
           }
         )}
       >
