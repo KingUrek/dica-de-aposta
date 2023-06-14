@@ -20,7 +20,7 @@ export default function Card({  link, type = 'normal', index, logoUrl,numberOfCa
           {
             'border-2 bg-primary-desatured tablet:w-[90px] tablet:h-[46px]': type === 'normal',
             'bg-primary-invert h-full tablet:w-[140px] tablet:h-[46px] tablet:font-20': type === 'bonus',
-            'tablet:hidden':index===0 && numberOfCards >= 4
+            'tablet:hidden':index===0 && numberOfCards && numberOfCards >= 4
           }
         )}
       >
