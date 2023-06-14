@@ -8,7 +8,10 @@ module.exports = {
   theme: {
     screens: {
       mobile: '428px',
+      mobileg: '640px',
+      tabletp: '768px',
       tablet: '990px',
+      tabletx: '1024px',
       tabletg: '1280px',
       desktop: '1440px',
     },
