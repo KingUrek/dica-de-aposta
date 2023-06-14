@@ -302,3 +302,29 @@ export async function getSportCarousel() {
   );
   return data.carouselSportItems;
 }
+
+export async function getHighlightTip() {
+  const data = await fetchAPI(
+    `
+    query HighlightTip {
+      highlightTip {
+        title
+        image
+        teams {
+          name
+          logo
+        }
+        tournamentName
+        location
+        eventTime
+        bookmakerOdds {
+          bookmakerName
+          odd
+        }
+      }
+    }
+
+`
+  );
+  return data.highlightTip;
+}

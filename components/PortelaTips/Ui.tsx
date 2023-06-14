@@ -9,7 +9,7 @@ export default async function PortelaTipsUi() {
     <Container>
       <div className='rounded bg-primary'>
         <div className='px-13 py-16 tablet:py-26'>
-          <p className=' font-tittilium text-white text-28 mb-12 font-bold text-center tablet:mb-16'>
+          <p className=' font-tittilium text-white text-28 mb-12 tablet:text-40 font-bold text-center tablet:mb-16'>
             Tenha exclusividade de dicas no Portela Tips
           </p>
           <div className='max-w-[300px] m-auto'>
