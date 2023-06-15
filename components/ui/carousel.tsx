@@ -15,13 +15,15 @@ export default function Carousel({ children }: Props) {
       return null
     }
     const blockWidth = header.clientWidth
-    setPadding((window.innerWidth - blockWidth) / 2)
+    const blockPadding =  parseInt(window.getComputedStyle(header, null).getPropertyValue('padding-right'))
+    console.log(blockPadding)
+    setPadding(((window.innerWidth - blockWidth) / 2) + blockPadding)
   }
   useEffect(() => {
     getPadding()
   
   }, [])
   return (
-    <div style={{paddingLeft:padding}} className='flex gap-6 overflow-scroll pl-20 pb-10'>{children}</div>
+    <div style={{paddingLeft:padding}} className='flex gap-6 overflow-scroll pl-20 pb-19'>{children}</div>
   )
 }

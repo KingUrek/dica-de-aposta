@@ -11,7 +11,7 @@ export default async function BestBookmakerUi() {
   return (
     <div className=' tablet:hidden'>
       <Container>
-        <h2 className=' text-primary text-28 mb-12'>
+        <h2 className=' text-primary text-center text-28 mb-12'>
           Melhores casas de aposta
         </h2>
       </Container>
