@@ -9,7 +9,6 @@ import { getHighlightTip } from '../../lib/api';
 export default async function HighlightTipUi() {
   const data = await getHighlightTip();
   const { location, teams, tournamentName, bookmakerOdds } = data;
-  console.log(data);
   return (
     <Container>
       <div className='rounded py-18 px-13 gradient-80'>

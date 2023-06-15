@@ -241,6 +241,7 @@ export async function getBookmakers(homeplace?:string) {
           databaseId
           title
           bookmakerUrl
+          isBonus
           featuredImage {
             node {
               databaseId

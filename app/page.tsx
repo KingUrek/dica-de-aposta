@@ -18,7 +18,7 @@ export default function Page() {
         <div
           className={`tablet:container tablet:mx-auto tablet:px-18 tablet:bg-azure tablet:flex tablet:flex-row-reverse desktop:px-[125px]`}
         >
-          <div className='bg-azure py-12'>
+          <div className='bg-azure py-12 tablet:py-24'>
             <Container className='tablet:px-0 desktop:!px-0'>
               <BetHouseCards></BetHouseCards>
             </Container>

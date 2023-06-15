@@ -16,7 +16,6 @@ export default function Carousel({ children }: Props) {
     }
     const blockWidth = header.clientWidth
     const blockPadding =  parseInt(window.getComputedStyle(header, null).getPropertyValue('padding-right'))
-    console.log(blockPadding)
     setPadding(((window.innerWidth - blockWidth) / 2) + blockPadding)
   }
   useEffect(() => {

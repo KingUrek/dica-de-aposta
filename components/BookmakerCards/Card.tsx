@@ -35,7 +35,7 @@ export default function Card({  link, type = 'normal', index, logoUrl,numberOfCa
           </div>
             
         ) : (
-          <p className='font-16 text-white font-bold'>Bônus</p>
+          <p className=' text-16 tablet:text-20 text-white font-bold'>Bônus</p>
         )}
       </div>
     </Link>
