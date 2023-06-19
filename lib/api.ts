@@ -320,6 +320,7 @@ export async function getHighlightTip() {
         eventTime
         bookmakerOdds {
           bookmakerName
+          bookmakerLogo
           odd
         }
       }

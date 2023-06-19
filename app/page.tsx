@@ -9,6 +9,7 @@ import BookMakers from '../components/BookMakers';
 import HighlightTip from '../components/HighlightTip';
 import Container from '../components/ui/container';
 import TopGuesses from '../components/TopGuesses';
+import TopTips from '../components/TopTips';
 
 export default function Page() {
   return (
@@ -41,6 +42,9 @@ export default function Page() {
         <div className='tablet:absolute tablet:left-[50%] tablet:translate-x-[-50%] w-full'>
           <PortelaTips></PortelaTips>
         </div>
+      </div>
+      <div>
+        <TopTips></TopTips>
       </div>
       <div className='bg-primary bg-opacity-5 pt-8 pb-28 tablet:pt-22 tablet:pb-[96px]'>
         <BookMakers></BookMakers>

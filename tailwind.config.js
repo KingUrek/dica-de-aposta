@@ -22,6 +22,7 @@ module.exports = {
         light: '#F1F1F1',
         search: '#E7E7E7',
         seachText: '#858585',
+        tipbg: '#E4E4E4'
       },
       black: {
         darkest: '#000000',
