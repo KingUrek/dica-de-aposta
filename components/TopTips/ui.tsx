@@ -1,11 +1,11 @@
 import React from 'react';
 import Container from '../ui/container';
 import Card from './Card';
-import { getHighlightTip } from '../../lib/api';
+import { getAllTips } from '../../lib/api';
 import Button from '../ui/button';
 
 export default async function TopTipsUi() {
-  const data = [await getHighlightTip()];
+  const data = await getAllTips();
   console.log(data);
 
   return (

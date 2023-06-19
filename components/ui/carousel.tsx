@@ -23,6 +23,6 @@ export default function Carousel({ children }: Props) {
   
   }, [])
   return (
-    <div style={{paddingLeft:padding}} className='flex gap-6 overflow-scroll pl-20 pb-19'>{children}</div>
+    <div style={{paddingLeft:padding, paddingRight:padding}} className='flex gap-6 overflow-scroll pl-20 pb-19'>{children}</div>
   )
 }

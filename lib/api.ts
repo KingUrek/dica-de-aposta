@@ -231,8 +231,8 @@ export async function getFooter() {
   return data.crbThemeOptions;
 }
 
-export async function getBookmakers(homeplace?:string) {
-  const query = homeplace? `(where: {homePlace: "${homeplace}"})`:''
+export async function getBookmakers(homeplace?: string) {
+  const query = homeplace ? `(where: {homePlace: "${homeplace}"})` : '';
   const data = await fetchAPI(
     `
     query bookmakersInfo {
@@ -329,4 +329,47 @@ export async function getHighlightTip() {
 `
   );
   return data.highlightTip;
+}
+
+export async function getAllTips() {
+  const data = await fetchAPI(
+    `
+    {
+      tips {
+        nodes {
+          id
+          content
+          tipBookmakers {
+            bookmaker_odd
+            single_bookmaker {
+              title
+              featuredImage {
+                node {
+                  mediaItemUrl
+                }
+              }
+            }
+          }
+          tipTimes {
+            databaseId
+            teamLogo
+            title
+          }
+          databaseId
+          slug
+          title
+          uri
+          tipEventDatetime
+          featuredImage {
+            node {
+              mediaItemUrl
+            }
+          }
+        }
+      }
+    }
+
+`
+  );
+  return data.tips.nodes;
 }

@@ -8,19 +8,20 @@ import Timer from './Timer';
 import Button from '../ui/button';
 
 export default function Card({
-  image,
+  featuredImage,
   tournamentName,
-  bookmakerOdds,
-  eventTime,
-  teams,
+  tipBookmakers,
+  tipEventDatetime,
+  tipTimes,
 }) {
   const dateFormat = "dd 'de' MMM. 'de' YYY 'às' k'h'mm";
   const [isOpen, setIsOpen] = useState(false);
 
+
   return (
     <div className='relative w-full bg-primary-dark rounded pt-4 overflow-hidden tablet:flex'>
       <div className='relative h-32 w-full tablet:w-[300px] tablet:flex-shrink-0 tablet:h-auto tablet:mt-[-8px]'>
-        <Image fill alt='imagem de fundo' src={image}></Image>
+        <Image fill alt='imagem de fundo' src={featuredImage?.node.mediaItemUrl}></Image>
         <div className='left-0 right-0 top-0 bottom-0 bg-black-darkest bg-opacity-50 absolute hidden tablet:block'></div>
       </div>
       <div className=' bg-gray-tipbg w-full py-12 px-11 tablet:flex tablet:gap-24'>
@@ -31,10 +32,10 @@ export default function Card({
             </p>
             <div className='relative px-7 py-5 bg-primary-dark rounded border-solid border-2 border-primary-gray flex justify-center tablet:border-white'>
               <Image
-                alt={bookmakerOdds[0].bookmakerName}
+                alt={'logo ' + tipBookmakers[0].single_bookmaker[0].title}
                 width={60}
                 height={20}
-                src={bookmakerOdds[0].bookmakerLogo}
+                src={tipBookmakers[0].single_bookmaker[0].featuredImage.node.mediaItemUrl}
               ></Image>
             </div>
           </div>
@@ -43,11 +44,11 @@ export default function Card({
               Milan vence de 2 x 1
             </p>
             <p className='rounded-sm bg-primary-dark text-white text-10 py-2 px-18 font-bold w-fit cursor-pointer tablet:text-14'>
-              ODD {bookmakerOdds[0].odd}
+              ODD {tipBookmakers[0].bookmaker_odd}
             </p>
           </div>
           <p className='pb-5 border-b border-borderGray text-14 tablet:text-16 text-primary-gray'>
-            {format(parseISO(eventTime), dateFormat)}
+            {format(parseISO(tipEventDatetime), dateFormat)}
           </p>
           <p className=' text-primary-gray mt-12 text-14 hidden tablet:block mb-0 tablet:text-16'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -61,10 +62,10 @@ export default function Card({
               width={33}
               height={33}
               alt='logo da liga'
-              src={teams[0].logo}
+              src={tipTimes[0].teamLogo}
             />
             <p className=' text-center text-20 text-primary-dark tablet:text-white font-tittilium font-bold'>
-              {teams[0].name}
+              {tipTimes[0].title}
             </p>
           </div>
           <p className=' text-center text-20 text-primary-dark tablet:text-white font-tittilium font-bold'>
@@ -75,10 +76,10 @@ export default function Card({
               width={33}
               height={33}
               alt='logo da liga'
-              src={teams[1].logo}
+              src={tipTimes[1].teamLogo}
             />
             <p className=' text-center text-20 text-primary-dark tablet:text-white font-tittilium font-bold'>
-              {teams[1].name}
+              {tipTimes[1].title}
             </p>
           </div>
           <DropDownArrow
@@ -100,7 +101,7 @@ export default function Card({
               Milan vence de 2 x 1
             </p>
             <p className='rounded-sm bg-primary-dark text-white text-10 py-2 px-18 font-bold w-fit cursor-pointer'>
-              ODD {bookmakerOdds[0].odd}
+              ODD {tipBookmakers[0].bookmaker_odd}
             </p>
           </div>
 
@@ -109,10 +110,10 @@ export default function Card({
             <p className=' font-tittilium text-primary-dark text-16 font-bold'>
               Tempo Restante para apostar
             </p>
-            <Timer date={eventTime}></Timer>
+            <Timer date={tipEventDatetime}></Timer>
             <div className='w-full mt-7 mb-2 max-w-[298px]'>
               <Button type='outside' link='/'>
-                Apostar em {bookmakerOdds[0].bookmakerName}
+                Apostar em {tipBookmakers[0].single_bookmaker[0].title}
               </Button>
             </div>
           </div>
