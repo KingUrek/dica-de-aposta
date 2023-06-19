@@ -43,7 +43,7 @@ export default function Page() {
           <PortelaTips></PortelaTips>
         </div>
       </div>
-      <div>
+      <div className=' mb-16 mt-10'>
         <TopTips></TopTips>
       </div>
       <div className='bg-primary bg-opacity-5 pt-8 pb-28 tablet:pt-22 tablet:pb-[96px]'>
