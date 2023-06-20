@@ -31,9 +31,17 @@ export default function Page() {
           </Container>
         </div>
       </div>
+      <Container>
+        <div className='grid tablet:grid-cols-[3fr_2fr] gap-14 grid-rows-[236px_1fr] tablet:pt-28 pb-26 '>
+          {/* <Container className='relative my-[56px] max-w-[425px] '> */}
+          <div className=' row-span-full'>
+            <HighlightTip></HighlightTip>
+          </div>
 
-      <HighlightTip></HighlightTip>
-      <TelegramGroup></TelegramGroup>
+          <TelegramGroup></TelegramGroup>
+          <div className='h-[400px] bg-black w-full rounded hidden tablet:block'></div>
+        </div>
+      </Container>
       <BestBookmaker></BestBookmaker>
       <div className='bg-primary mb-32 bg-opacity-5 pb-18 pt-9 tablet:pt-22 relative tablet:pb-[116px] tablet:mb-[212px]'>
         <div className=' mb-28'>

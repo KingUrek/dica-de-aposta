@@ -21,7 +21,7 @@ export default function Button({ children, onClick, link, className, type }: Pro
     </Link>
     }
     return <Link href={link} target="_blank" >
-      <div className={"text-16 tablet:text-20 bg-primary-invert text-white rounded py-8 tablet:py-12 text-center font-bold" + " " + className}>
+      <div className={"text-16 tablet:text-20 bg-primary-invert !leading-[16px] text-white rounded py-8 tablet:py-12 text-center font-bold" + " " + className}>
         {children}
       </div>
 

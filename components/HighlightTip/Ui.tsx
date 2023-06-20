@@ -12,7 +12,6 @@ export default async function HighlightTipUi() {
   const dateFormat = "dd 'de' MMM. 'de' YYY 'às' k'h'mm";
 
   return (
-    <Container>
       <div className='rounded py-18 px-13  relative overflow-hidden'>
         <div className='w-full h-full absolute top-0 left-0 z-10'>
           <Image
@@ -88,6 +87,5 @@ export default async function HighlightTipUi() {
           </div>
         </div>
       </div>
-    </Container>
   );
 }
