@@ -311,6 +311,7 @@ export async function getHighlightTip() {
       highlightTip {
         title
         image
+        link
         teams {
           name
           logo
