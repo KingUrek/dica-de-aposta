@@ -6,8 +6,7 @@ import cn from 'classnames';
 
 
 export default async function SportsCards() {
-  let data = await getSportCarousel();
-  data = [...data, ...data]
+  const data = await getSportCarousel();
   const isSmall = data.length >= 4;
 
   return (
