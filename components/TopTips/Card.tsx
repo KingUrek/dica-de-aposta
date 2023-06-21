@@ -9,26 +9,26 @@ import Button from '../ui/button';
 
 export default function Card({
   featuredImage,
-  tournamentName,
+  tipTournaments,
   tipBookmakers,
   tipEventDatetime,
   tipTimes,
 }) {
   const dateFormat = "dd 'de' MMM. 'de' YYY 'às' k'h'mm";
   const [isOpen, setIsOpen] = useState(false);
-
+  console.log(tipTournaments)
 
   return (
     <div className='relative w-full bg-primary-dark rounded pt-4 overflow-hidden tablet:flex'>
       <div className='relative h-32 w-full tablet:w-[300px] tablet:flex-shrink-0 tablet:h-auto tablet:mt-[-8px]'>
-        <Image fill alt='imagem de fundo' src={featuredImage?.node.mediaItemUrl}></Image>
+        <Image style={{objectFit:'cover'}} fill alt='imagem de fundo' src={featuredImage?.node.mediaItemUrl}></Image>
         <div className='left-0 right-0 top-0 bottom-0 bg-black-darkest bg-opacity-50 absolute hidden tablet:block'></div>
       </div>
       <div className=' bg-gray-tipbg w-full py-12 px-11 tablet:flex tablet:gap-24'>
         <div>
           <div className='flex justify-between items-center pb-7'>
             <p className='rounded-sm bg-primary-dark text-white text-10 py-2 px-18 font-bold w-fit cursor-pointer tablet:absolute tablet:left-9 tablet:top-7 tablet:text-14 tablet:px-4 tablet:py-2'>
-              {tournamentName}
+              {tipTournaments[0]?.name}
             </p>
             <div className='relative px-7 py-5 bg-primary-dark rounded border-solid border-2 border-primary-gray flex justify-center tablet:border-white'>
               <Image
@@ -43,7 +43,7 @@ export default function Card({
             <p className=' text-primary-dark text-20 font-bold font-tittilium mb-5 tablet:mb-0 '>
               Milan vence de 2 x 1
             </p>
-            <p className='rounded-sm bg-primary-dark text-white text-10 py-2 px-18 font-bold w-fit cursor-pointer tablet:text-14'>
+            <p className='rounded-sm bg-primary-dark text-white text-10 py-2 px-16 font-bold w-fit cursor-pointer tablet:text-14'>
               ODD {tipBookmakers[0].bookmaker_odd}
             </p>
           </div>

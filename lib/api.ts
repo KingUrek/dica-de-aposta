@@ -312,6 +312,7 @@ export async function getHighlightTip() {
         title
         image
         link
+        slug
         teams {
           name
           logo
@@ -340,6 +341,9 @@ export async function getAllTips() {
         nodes {
           id
           content
+          tipTournaments {
+            name
+          }
           tipBookmakers {
             bookmaker_odd
             single_bookmaker {

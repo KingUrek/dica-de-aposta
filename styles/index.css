@@ -37,6 +37,11 @@
   .gradient-80{
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 53.81%, #000000 93.92%), rgba(0, 0, 0, 0.2);
   }
+
+  .backdrop::backdrop{
+    background-color: #000000;
+    opacity: 70%;
+  }
 }
 /* .has-text-align-left {
   @apply text-left;

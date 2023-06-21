@@ -1,17 +1,22 @@
 import React from 'react';
 import Container from '../ui/container';
 import { format, parseISO } from 'date-fns';
+
 //TODO: remover Logo mock
 import Image from 'next/image';
-import { getHighlightTip } from '../../lib/api';
+import { getAllTips, getHighlightTip } from '../../lib/api';
 import Button from '../ui/button';
+import Modal from './Modal';
+import ModalButton from './ModalButton';
 
 export default async function HighlightTipUi() {
   const data = await getHighlightTip();
+  const modalInfo = (await getAllTips()).find(({slug}) => data.slug === slug);
   const { location, teams, tournamentName, bookmakerOdds } = data;
   const dateFormat = "dd 'de' MMM. 'de' YYY 'às' k'h'mm";
 
   return (
+      <>
       <div className='rounded py-18 px-13  relative overflow-hidden tablet:px-16'>
         <div className='w-full h-full absolute top-0 left-0 z-10'>
           <Image
@@ -76,16 +81,15 @@ export default async function HighlightTipUi() {
             })}
           </div>
           <div className='flex mx-auto justify-center gap-6 mt-18 tablet:mt-32 tablet:mb-24'>
-            <div className='w-[144px] tablet:w-[222px] h-[42px]'>
-              <Button type='outside' link='/'>
-                Ver Dica
-              </Button>
-            </div>
+            <ModalButton/>
             {data.link && <div className='w-[144px] tablet:w-[222px]'>
               <Button className='!leading-[14px] text-white border-white' type='inside' link={data.link}>Ver Palpite</Button>
             </div>}
           </div>
         </div>
       </div>
+        <Modal {...modalInfo}></Modal>
+      </>
+
   );
 }

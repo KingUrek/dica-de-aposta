@@ -50,6 +50,7 @@ module.exports = {
       borderGray: '#B9B9B9',
       grayshOrange: '#EDE3CF',
       deepblue: '#094452',
+      transparent:'transparent'
     },
     borderRadius: {
       DEFAULT: '10px',
