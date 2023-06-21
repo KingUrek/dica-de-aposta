@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   link?: string;
   className?: string;
   type?: 'outside' | 'inside' | 'modal';
