@@ -11,19 +11,15 @@ import ModalButton from './ModalButton';
 
 export default async function HighlightTipUi() {
   const data = await getHighlightTip();
-  const modalInfo = (await getAllTips()).find(({slug}) => data.slug === slug);
+  const modalInfo = (await getAllTips()).find(({ slug }) => data.slug === slug);
   const { location, teams, tournamentName, bookmakerOdds } = data;
   const dateFormat = "dd 'de' MMM. 'de' YYY 'às' k'h'mm";
 
   return (
-      <>
+    <>
       <div className='rounded py-18 px-13  relative overflow-hidden tablet:px-16'>
         <div className='w-full h-full absolute top-0 left-0 z-10'>
-          <Image
-            alt='background'
-            src={data.image}
-            fill
-          ></Image>
+          <Image alt='background' src={data.image} fill></Image>
         </div>
         <div className='w-full h-full absolute top-0 left-0 gradient-80 z-10'></div>
         <div className='z-20 relative'>
@@ -33,29 +29,33 @@ export default async function HighlightTipUi() {
           <div className='flex flex-col gap-12 mb-18 tablet:mb-16'>
             <div className='flex items-end justify-between mt-18 gap-5'>
               <div className='flex flex-col items-center gap-9 flex-1 mr-auto'>
-                <Image
-                  width={40}
-                  height={40}
-                  alt='league logo'
-                  src={teams[0].logo}
-                />
-                <p className=' text-28 text-white font-tittilium font-bold'>
-                  {teams[0].name}
-                </p>
+                <div className='flex flex-col ml-auto items-center'>
+                  <Image
+                    width={40}
+                    height={40}
+                    alt='league logo'
+                    src={teams[0].logo}
+                  />
+                  <p className=' text-28 text-white font-tittilium font-bold text-center'>
+                    {teams[0].name}
+                  </p>
+                </div>
               </div>
-              <p className=' text-28 text-white font-tittilium font-bold flex-1 text-center'>
+              <p className=' text-28 text-white font-tittilium font-bold flex-1 text-center max-w-[120px]'>
                 X
               </p>
               <div className='flex flex-col items-center gap-9 ml-auto flex-1'>
-                <Image
-                  width={40}
-                  height={40}
-                  alt='league logo'
-                  src={teams[1].logo}
-                />
-                <p className=' text-36 text-white font-tittilium font-bold text-end'>
-                  {teams[1].name}
-                </p>
+                <div className='flex flex-col items-center'>
+                  <Image
+                    width={40}
+                    height={40}
+                    alt='league logo'
+                    src={teams[1].logo}
+                  />
+                  <p className=' text-36 text-white font-tittilium font-bold text-center'>
+                    {teams[1].name}
+                  </p>
+                </div>
               </div>
             </div>
             <p className=' text-16 font-bold text-white text-center'>
@@ -81,15 +81,22 @@ export default async function HighlightTipUi() {
             })}
           </div>
           <div className='flex mx-auto justify-center gap-6 mt-18 tablet:mt-32 tablet:mb-24'>
-            <ModalButton/>
-            {data.link && <div className='w-[144px] tablet:w-[222px]'>
-              <Button className='!leading-[14px] text-white border-white' type='inside' link={data.link}>Ver Palpite</Button>
-            </div>}
+            <ModalButton />
+            {data.link && (
+              <div className='w-[144px] tablet:w-[222px]'>
+                <Button
+                  className='!leading-[14px] text-white border-white'
+                  type='inside'
+                  link={data.link}
+                >
+                  Ver Palpite
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       </div>
-        <Modal {...modalInfo}></Modal>
-      </>
-
+      <Modal {...modalInfo}></Modal>
+    </>
   );
 }
