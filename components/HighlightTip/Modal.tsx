@@ -7,6 +7,7 @@ export default function Modal(props) {
   function closeDialog(e) {
     const dialog = document.getElementById('highlightModal');
     if (e.target === dialog) {
+      {/* @ts-expect-error */}
       dialog?.close();
     }
   }

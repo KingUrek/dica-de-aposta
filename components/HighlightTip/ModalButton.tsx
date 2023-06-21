@@ -5,6 +5,7 @@ import Button from '../ui/button';
 export default function ModalButton() {
   function toggleModal() {
     const modal = document.getElementById('highlightModal');
+    {/* @ts-expect-error */}
     modal?.showModal();
   }
   return (
