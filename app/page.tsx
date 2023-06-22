@@ -41,6 +41,7 @@ export default function Page() {
           </div>
 
           <TelegramGroup></TelegramGroup>
+      {/* @ts-expect-error Async Server Component */}
           <HighlightMultiple></HighlightMultiple>
         </div>
       </Container>
