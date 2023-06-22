@@ -10,6 +10,8 @@ import HighlightTip from '../components/HighlightTip';
 import Container from '../components/ui/container';
 import TopGuesses from '../components/TopGuesses';
 import TopTips from '../components/TopTips';
+import Multiples from '../components/Multiples';
+import HighlightMultiple from '../components/Multiples/HighlightMultiple';
 
 export default function Page() {
   return (
@@ -39,9 +41,13 @@ export default function Page() {
           </div>
 
           <TelegramGroup></TelegramGroup>
-          <div className='h-[400px] bg-black w-full rounded hidden tablet:block'></div>
+          <HighlightMultiple></HighlightMultiple>
         </div>
       </Container>
+      <div className=' mb-24'>
+
+      <Multiples></Multiples>
+      </div>
       <BestBookmaker></BestBookmaker>
       <div className='bg-primary mb-32 bg-opacity-5 pb-18 pt-9 tablet:pt-22 relative tablet:pb-[116px] tablet:mb-[212px]'>
         <div className=' mb-28'>

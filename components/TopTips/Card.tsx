@@ -16,7 +16,6 @@ export default function Card({
 }) {
   const dateFormat = "dd 'de' MMM. 'de' YYY 'às' k'h'mm";
   const [isOpen, setIsOpen] = useState(false);
-  console.log(tipTournaments)
 
   return (
     <div className='relative w-full bg-primary-dark rounded pt-4 overflow-hidden tablet:flex'>

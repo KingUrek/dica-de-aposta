@@ -378,3 +378,48 @@ export async function getAllTips() {
   );
   return data.tips.nodes;
 }
+
+export async function getMultiples() {
+  const data = await fetchAPI(
+    `
+    {
+      multiples {
+        nodes {
+          databaseId
+          title
+          excerpt
+          featuredImage {
+            node {
+              altText
+              sourceUrl
+            }
+          }
+          matches {
+            match {
+              databaseId
+              title
+              teamLogo
+            }
+          }
+          multipleBookmaker {
+            databaseId
+            title
+            link
+            bookmakerUrl
+            featuredImage {
+              node {
+                mediaItemUrl
+              }
+            }
+          }
+          multipleProfit
+          multipleHasTimeout
+          multipleUntil
+        }
+      }
+    }
+
+`
+  );
+  return data.multiples.nodes;
+}
