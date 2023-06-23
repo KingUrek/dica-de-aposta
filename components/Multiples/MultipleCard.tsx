@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
 import { format, parseISO } from 'date-fns';
-import Button from '../ui/button';
 import ModalButton from './ModalButton';
 import cn from 'classnames';
 
@@ -15,9 +14,7 @@ export default function MultipleCard({
   const dateFormat = "dd/MM/YYY 'às' k'h'mm";
 
   return (
-    <div className={cn('bg-primary-light rounded overflow-hidden max-w-[365px] hidden [&:nth-of-type(1)]:block', {
-      'tabletg:block tabletg:[&:nth-of-type(1)]:hidden': true,
-      'tablet:[&:nth-of-type(2)]:block':!false
+    <div className={cn('bg-primary-light rounded overflow-hidden max-w-[365px] hidden [&:nth-of-type(1)]:block tablet:[&:nth-of-type(2)]:block tabletg:block tabletg:[&:nth-of-type(1)]:hidden', {
       
     })}>
       <p className=' text-white font-bold text-20 mx-4 text-center py-4'>

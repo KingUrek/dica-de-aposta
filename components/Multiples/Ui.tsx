@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from '../ui/container';
 import Button from '../ui/button';
-import { getFooter, getMultiples } from '../../lib/api';
+import { getMultiples } from '../../lib/api';
 import MultipleCard from './MultipleCard';
 
 export default async function MultiplesUi() {
