@@ -20,7 +20,7 @@ export default function MultipleCard({
       <p className=' text-white font-bold text-20 mx-4 text-center py-4'>
         Tripla Chance
       </p>
-      <div className='relative'>
+      <div className='relative h-full'>
         <Image fill alt={featuredImage.node.altText} src={featuredImage.node.sourceUrl}></Image>
         <div className='w-full h-full absolute top-0 left-0 gradient-80 z-10'></div>
         <div className='p-12 z-20 relative'>
@@ -32,7 +32,6 @@ export default function MultipleCard({
                 alt={'logo ' + multipleBookmaker.title}
                 src={multipleBookmaker.featuredImage.node.mediaItemUrl}
               ></Image>
-              <p className='text-12 font-bold text-white'>205</p>
             </div>
             <div className='w-[120px] h-[70px] rounded flex flex-col justify-center items-center px-3 bg-primary border-2 border-white'>
               <p className='font-bold text-white text-18'>Retorno</p>
@@ -43,26 +42,27 @@ export default function MultipleCard({
             Aposte até {format(parseISO(multipleUntil), dateFormat)}
           </p>
           <div className='flex gap-7 justify-center flex-wrap mb-18'>
-            {matches.map(({ match }) => (
+            {matches.map(({ match }) => {
+              return match.length >= 2 && (
               <div
-                key={match[0].databaseId + match[1].databaseId}
+                key={match[0]?.databaseId + match[1]?.databaseId}
                 className='w-[142px] h-[42px] rounded flex items-center justify-center px-3 bg-primary border-2 border-white gap-y-7 gap-x-9'
               >
                 <Image
                   width={25}
                   height={25}
-                  alt={'logo ' + match[0].title}
-                  src={match[0].teamLogo}
+                  alt={'logo ' + match[0]?.title}
+                  src={match[0]?.teamLogo}
                 ></Image>
                 <p className='text-[24px] font-bold text-white'>X</p>
                 <Image
                   width={25}
                   height={25}
-                  alt={'logo ' + match[1].title}
-                  src={match[1].teamLogo}
+                  alt={'logo ' + match[1]?.title}
+                  src={match[1]?.teamLogo}
                 ></Image>
               </div>
-            ))}
+            )})}
           </div>
           <ModalButton modalId={'/'} />
         </div>
