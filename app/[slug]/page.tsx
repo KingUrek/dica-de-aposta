@@ -21,7 +21,7 @@ export default function Page({ params }) {
     <>
       <div className='bg-primary mb-32 bg-opacity-5 pb-18 pt-9 tablet:pt-22 relative tablet:pb-[116px] tablet:mb-[212px]'>
         <div className=' mb-28'>
-          <TopGuesses slug={params.slug}></TopGuesses>
+          <TopGuesses></TopGuesses>
         </div>
       </div>
     </>

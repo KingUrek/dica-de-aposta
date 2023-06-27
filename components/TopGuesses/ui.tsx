@@ -4,8 +4,7 @@ import Card from './Card';
 import { getAllTips } from '../../lib/api';
 import Button from '../ui/button';
 
-export default async function TopGuessesUi({ slug }) {
-  console.log(slug)
+export default async function TopGuessesUi() {
   const data = (await getAllTips()).filter(({ tipEventDatetime, content }) => {
     return new Date(tipEventDatetime) >= new Date();
   });

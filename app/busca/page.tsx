@@ -39,6 +39,8 @@ export default function Busca() {
               </p>
               <div className='flex flex-col gap-12 '>
                   {searchItems.map((item) => {
+                  {/* @ts-expect-error Async Server Component */}
+
                   return <SearchCard key={item.id} {...item} />;
                 })}
               </div>
