@@ -1,6 +1,4 @@
 import BetHouseCards from '../components/BookmakerCards/Index';
-import Footer from '../components/Footer';
-import Header from '../components/Header/Header';
 import SportsCards from '../components/SportsCards';
 import TelegramGroup from '../components/TelegramGroup';
 import BestBookmaker from '../components/BestBookmaker';
@@ -16,7 +14,6 @@ import HighlightMultiple from '../components/Multiples/HighlightMultiple';
 export default function Page() {
   return (
     <>
-      <Header></Header>
       <div className='tablet:bg-azure'>
         <div
           className={`tablet:container tablet:mx-auto tablet:px-18 tablet:bg-azure tablet:flex tablet:flex-row-reverse desktop:px-[125px]`}
@@ -65,7 +62,6 @@ export default function Page() {
         <BookMakers></BookMakers>
       </div>
       {/* </div> */}
-      <Footer></Footer>
     </>
   );
 }

@@ -1,8 +1,9 @@
-"use client"
+'use client';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
+import Container from '../ui/container';
 
 type Props = {
   children: string | ReactNode;
@@ -13,19 +14,19 @@ type Props = {
 export default function HeaderOption({
   children,
   last = false,
-  link='/'
+  link = '/',
 }: Props) {
   const menuClass = classNames(
-    'font-tittilium max-w-[200px] font-bold py-12 text-28 text-primary border-borderGray hover:text-primary-invert tablet:text-18 tablet:text-white tablet:border-b-0',
+    'font-tittilium max-w-[200px] font-bold py-12 text-28 text-primary border-borderGray hover:text-primary-invert tabletx:text-18 tabletx:text-white tabletx:border-b-0',
     {
       'border-b': !last,
     }
   );
   return (
-    <div className='px-20'>
+    <Container>
       <Link href={link}>
         <p className={menuClass}>{children}</p>
       </Link>
-    </div>
+    </Container>
   );
 }

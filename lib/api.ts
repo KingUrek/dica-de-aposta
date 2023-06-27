@@ -1,4 +1,4 @@
-const API_URL = process.env.WORDPRESS_API_URL as RequestInfo;
+const API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL as RequestInfo;
 async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
   const headers = { 'Content-Type': 'application/json' };
 
@@ -420,4 +420,34 @@ export async function getMultiples() {
 `
   );
   return data.multiples.nodes;
+}
+
+export async function Search(search, page=1, postsperpage=5) {
+  const data = await fetchAPI(
+    `
+    {
+      tips(where: {search: "${search}"}, first: 10) {
+        nodes {
+          content
+          id
+          title
+          uri
+          tipBookmakers {
+            single_bookmaker {
+              bookmakerUrl
+              featuredImage {
+                node {
+                  altText
+                  sourceUrl
+                  srcSet
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+`
+  );
+  return data.tips.nodes;
 }

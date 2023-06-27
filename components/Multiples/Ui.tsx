@@ -6,7 +6,6 @@ import MultipleCard from './MultipleCard';
 
 export default async function MultiplesUi() {
   let multiples = await getMultiples();
-  multiples = [...multiples, ...multiples, ...multiples, ...multiples]
 
   return (
     <Container>

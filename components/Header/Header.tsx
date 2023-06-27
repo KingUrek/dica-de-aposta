@@ -1,17 +1,20 @@
 'use client';
 
-import Image from 'next/image';
 import Button from '../ui/button';
-import Logo from '../../public/logo.png';
-import { useState } from 'react';
+import CloseIcon from '../../public/icons/CloseMobile.svg';
+import CloseMenuMobile from '../../public/icons/CloseMenuMobile.png';
+import Container from '../ui/container';
 import HeaderOption from './HeaderOption';
-import classNames from 'classnames';
 import HeaderOptionDesktop from './HeaderOptionDesktop';
+import Image from 'next/image';
+import Logo from '../../public/logo.png';
 import Search from './Search';
 import SearchIcon from '../../public/icons/search.svg';
-import Container from '../ui/container';
+import classNames from 'classnames';
+import { useState } from 'react';
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchIsOpen, setSearchIsOpen] = useState(false);
   const menuOptions = [
     { title: 'Home', link: '/' },
     { title: 'Palpites', link: '/palpites' },
@@ -20,14 +23,44 @@ export default function Header() {
   ];
   return (
     <header className='bg-primary'>
-      <Container id="header">
-        <div  className=' py-5 tablet:py-11 flex justify-between items-center gap-10 tablet:justify-normal tablet:gap-[48px] '>
-          <Image placeholder='blur' priority src={Logo} alt='logo'></Image>
-          <div className='flex gap-[26px] items-center tablet:hidden'>
-            <SearchIcon className='text-white'></SearchIcon>
-            <Button onClick={() => setIsOpen(!isOpen)}>Menu</Button>
+      <Container id='header'>
+        <div className=' py-5 tabletx:py-11 flex justify-between items-center gap-10 tabletx:justify-normal tabletx:gap-[48px] relative '>
+          {!searchIsOpen && (
+            <Image placeholder='blur' priority src={Logo} alt='logo'></Image>
+          )}
+          <div className='flex gap-[26px] items-center tabletx:hidden w-full ml-auto justify-end'>
+            {searchIsOpen && (
+              <>
+                <input
+                  className='bg-transparent rounded-sm py-6 text-white text-10 pl-16 border-white border-2 placeholder:text-white w-full'
+                  placeholder='Digite aqui sua busca'
+                ></input>
+                <CloseIcon
+                  onClick={() => setSearchIsOpen(false)}
+                  className='absolute right-[125px]'
+                ></CloseIcon>
+              </>
+            )}
+
+            {isOpen ? (
+              <Image
+                onClick={() => setIsOpen(!isOpen)}
+                src={CloseMenuMobile}
+                alt='close icon'
+              />
+            ) : (
+              <>
+                <SearchIcon
+                  onClick={() => setSearchIsOpen(!searchIsOpen)}
+                  className={classNames('text-white', {
+                    'absolute left-5': searchIsOpen,
+                  })}
+                ></SearchIcon>
+                <Button onClick={() => setIsOpen(!isOpen)}>Menu</Button>
+              </>
+            )}
           </div>
-          <div className='hidden tablet:flex gap-[34px]'>
+          <div className='hidden tabletx:flex gap-[34px]'>
             {menuOptions.map((option, index) => (
               <HeaderOptionDesktop
                 key={option.title}
@@ -43,7 +76,7 @@ export default function Header() {
       </Container>
       <div
         className={classNames(
-          'bg-primary/5 max-h-[310px] absolute w-full tablet:hidden overflow-hidden transition-all z-50',
+          'bg-[#f2f9fa] max-h-[370px] absolute w-full tabletx:hidden overflow-hidden transition-all z-50',
           {
             '!max-h-0': !isOpen,
           }

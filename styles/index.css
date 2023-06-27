@@ -22,6 +22,10 @@
 
   html{
     font-size: 8px;
+    height: 100%;
+  }
+  body{
+    min-height: 100%;
   }
   
   img{
