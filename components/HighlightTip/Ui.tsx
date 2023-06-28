@@ -1,5 +1,4 @@
 import React from 'react';
-import Container from '../ui/container';
 import { format, parseISO } from 'date-fns';
 
 //TODO: remover Logo mock

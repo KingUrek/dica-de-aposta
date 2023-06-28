@@ -7,16 +7,6 @@ import LoadMore from './Loadmore';
 export default function BookMakerArchive() {
   const [cards, setCards] = useState([]);
   const [page, setPage] = useState(0);
-  // function getPerpage() {
-  //   if (window.screen.width >= 1280) {
-  //     return 3;
-  //     }
-  //   if (window.screen.width >= 990) {
-  //     return 2;
-  //   }
-  //   return 3
-
-  // }
 
   async function loadPage(currentPage: number, perPage = 6) {
     const bookMakers = await getBookmakers(undefined, currentPage, perPage);
@@ -35,6 +25,8 @@ export default function BookMakerArchive() {
       </h1>
       <div className='flex gap-12 flex-wrap justify-center items-stretch mb-12'>
         {cards.map((bookMaker) => {
+         {/* @ts-expect-error */}
+
           return <Card {...bookMaker}></Card>;
         })}
       </div>

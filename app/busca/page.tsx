@@ -10,10 +10,11 @@ export default function Busca() {
   const [loading, setLoading] = useState(true);
   const searchParams = useSearchParams();
   const searchParam = searchParams.get('s');
+  //TODO: Refatorar a paginação da busca. Hoje ela não é realmente paginada, só vai multiplicando a quantidade que busca. Mudar para buscar sempre 6
 
   async function searchData() {
     let searchData = await search(searchParam);
-    searchData = searchData.filter(({node}) => node.content)
+    searchData = searchData.filter(({ node }) => node.content);
     setSearchItems(searchData);
     setLoading(false);
   }
@@ -23,30 +24,42 @@ export default function Busca() {
   }, [searchParam]);
 
   return (
-    <Container className=' mt-28 mb-48'>
-      <h1 className='text-primary text-40 font-bold font-tittilium mb-16'>
+    <Container className=' mt-28 mb-48 flex-grow'>
+      <h1 className='text-primary text-28 tablet:text-40 font-bold font-tittilium mb-16'>
         Resultado de busca
       </h1>
-      <p className=''>Você pesquisou por: "{searchParam}"</p>
+      <p className='font-14 tablet:font-16 text-primary-gray'>
+        Você pesquisou por: "{searchParam}"
+      </p>
 
       {loading ? (
-        <p>Loading</p>
+        <div className='flex flex-col gap-12 mt-22 '>
+          {[1, 2, 3].map((key) => {
+            return (
+              <div
+                key={key}
+                className='rounded animate-pulse bg-gray-dark h-[200px] w-full pt-5'
+              ></div>
+            );
+          })}
+        </div>
       ) : (
         <>
           {searchItems.length ? (
             <>
               {' '}
-              <p className=' mb-28'>
+              <p className='font-14 tablet:font-16 text-primary-gray mb-28'>
                 Encontramos ({searchItems.length}) resultados para a sua busca
               </p>
               <div className='flex flex-col gap-12 '>
                 {searchItems.map((item) => {
+                  {/* @ts-expect-error */}
                   return <SearchCard key={item.id} {...item} />;
                 })}
               </div>
             </>
           ) : (
-            <p className=' mb-28'>
+            <p className='font-14 tablet:font-16 text-primary-gray mb-28'>
               Não encontramos nenhum resultado para a sua busca.
             </p>
           )}

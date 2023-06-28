@@ -1,5 +1,4 @@
 import React from 'react'
-import { getBookmakers } from '../../lib/api'
 import Container from '../../components/ui/container'
 import BookMakerArchive from '../../components/BookMakerArchive'
 
