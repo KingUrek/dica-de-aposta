@@ -12,6 +12,7 @@ import Search from './Search';
 import SearchIcon from '../../public/icons/search.svg';
 import classNames from 'classnames';
 import { useState } from 'react';
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [searchIsOpen, setSearchIsOpen] = useState(false);

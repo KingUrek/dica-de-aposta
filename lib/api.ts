@@ -229,8 +229,10 @@ export async function getFooter() {
   return data.crbThemeOptions;
 }
 
-export async function getBookmakers(homeplace?: string) {
-  const query = homeplace ? `(where: {homePlace: "${homeplace}"})` : '';
+export async function getBookmakers(homeplace?: string, page = 1, perPage=4) {
+  
+  const query = homeplace ? `(first:${page * perPage}, where: {homePlace: "${homeplace}"})` : `(first:${page * perPage})`;
+  
   const data = await fetchAPI(
     `
     query bookmakersInfo {
@@ -422,32 +424,35 @@ export async function getMultiples() {
   return data.multiples.nodes;
 }
 
-export async function Search(search, page=1, postsperpage=5) {
+export async function search(search, page=1, postsperpage=5) {
   const data = await fetchAPI(
     `
     {
-      tips(where: {search: "${search}"}, first: 10) {
-        nodes {
-          content
-          id
-          title
-          uri
-          tipBookmakers {
-            single_bookmaker {
-              bookmakerUrl
-              featuredImage {
-                node {
-                  altText
-                  sourceUrl
-                  srcSet
+      tips(where: {search: "${search}"}, first: 30) {
+        edges {
+          node {
+            tipContent
+            content
+              id
+              title
+              uri
+              tipBookmakers {
+                single_bookmaker {
+                  bookmakerUrl
+                  featuredImage {
+                    node {
+                      altText
+                      sourceUrl
+                      srcSet
+                    }
+                  }
                 }
               }
-            }
           }
         }
       }
     }
 `
   );
-  return data.tips.nodes;
+  return data.tips.edges;
 }

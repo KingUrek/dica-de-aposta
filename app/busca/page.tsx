@@ -2,30 +2,32 @@
 import React, { useEffect, useState } from 'react';
 import Container from '../../components/ui/container';
 import { useSearchParams } from 'next/navigation';
-import { Search } from '../../lib/api';
+import { search } from '../../lib/api';
 import SearchCard from '../../components/SearchCard';
 
 export default function Busca() {
   const [searchItems, setSearchItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const searchParams = useSearchParams();
-  const search = searchParams.get('s');
+  const searchParam = searchParams.get('s');
+
   async function searchData() {
-    const searchData = await Search(search);
+    let searchData = await search(searchParam);
+    searchData = searchData.filter(({node}) => node.content)
     setSearchItems(searchData);
     setLoading(false);
   }
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     searchData();
-  }, [search]);
+  }, [searchParam]);
 
   return (
     <Container className=' mt-28 mb-48'>
       <h1 className='text-primary text-40 font-bold font-tittilium mb-16'>
         Resultado de busca
       </h1>
-      <p className=''>Você pesquisou por: "{search}"</p>
+      <p className=''>Você pesquisou por: "{searchParam}"</p>
 
       {loading ? (
         <p>Loading</p>
@@ -38,9 +40,7 @@ export default function Busca() {
                 Encontramos ({searchItems.length}) resultados para a sua busca
               </p>
               <div className='flex flex-col gap-12 '>
-                  {searchItems.map((item) => {
-                  {/* @ts-expect-error Async Server Component */}
-
+                {searchItems.map((item) => {
                   return <SearchCard key={item.id} {...item} />;
                 })}
               </div>
