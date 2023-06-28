@@ -12,8 +12,11 @@ import Search from './Search';
 import SearchIcon from '../../public/icons/search.svg';
 import classNames from 'classnames';
 import { useState } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 export default function Header() {
+  const params = usePathname();
+  console.log('search', params)
   const [isOpen, setIsOpen] = useState(false);
   const [searchIsOpen, setSearchIsOpen] = useState(false);
   const menuOptions = [

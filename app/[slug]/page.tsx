@@ -10,20 +10,73 @@ import TopGuesses from '../../components/TopGuesses';
 import TopTips from '../../components/TopTips';
 import Multiples from '../../components/Multiples';
 import HighlightMultiple from '../../components/Multiples/HighlightMultiple';
+import { getTournaments } from '../../lib/api';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
- return [{slug:'gabriel'}]
+  const tournaments = await getTournaments()
+ return tournaments.map(({slug}) => slug)
 }
 
-export default function Page({ params }) {
+export default async function Page({ params }) {
   console.log(params)
+  // const tournaments = await getTournaments()
+  // const tournamentsSlugs = tournaments.map(({slug}) => slug)
+  // if (!tournamentsSlugs.includes(params.slug)) {
+  //   notFound()
+  // }
+  
+  
   return (
-    <>
+<>
+      <div className='tablet:bg-azure'>
+        {/* <div
+          className={`tablet:container tablet:mx-auto tablet:px-18 tablet:bg-azure tablet:flex tablet:flex-row-reverse desktop:px-[125px]`}
+        >
+          <div className='bg-azure py-12 tablet:py-24'>
+            <Container className='tablet:px-0 desktop:!px-0'>
+              <BetHouseCards></BetHouseCards>
+            </Container>
+          </div>
+          <Container className='tablet:px-0 tablet:flex items-center desktop:!px-0'>
+            <div className='mt-8 mb-12 tablet:m-0'>
+              <SportsCards></SportsCards>
+            </div>
+          </Container>
+        </div> */}
+      </div>
+      <Container>
+        <div className='grid tablet:grid-cols-[3fr_2fr] gap-14 grid-rows-[236px_1fr] tablet:pt-28 pb-26 '>
+          {/* <Container className='relative my-[56px] max-w-[425px] '> */}
+          <div className=' row-span-full'>
+            <HighlightTip slug={params.slug}></HighlightTip>
+          </div>
+
+          <TelegramGroup></TelegramGroup>
+      {/* @ts-expect-error Async Server Component */}
+          <HighlightMultiple slug={params.slug}></HighlightMultiple>
+        </div>
+      </Container>
+      <div className=' mb-24'>
+
+      <Multiples slug={params.slug}></Multiples>
+      </div>
+      <BestBookmaker></BestBookmaker>
       <div className='bg-primary mb-32 bg-opacity-5 pb-18 pt-9 tablet:pt-22 relative tablet:pb-[116px] tablet:mb-[212px]'>
         <div className=' mb-28'>
-          <TopGuesses></TopGuesses>
+          <TopGuesses slug={params.slug}></TopGuesses>
+        </div>
+        <div className='tablet:absolute tablet:left-[50%] tablet:translate-x-[-50%] w-full'>
+          <PortelaTips></PortelaTips>
         </div>
       </div>
+      <div className=' mb-16 mt-10'>
+        <TopTips slug={params.slug}></TopTips>
+      </div>
+      <div className='bg-primary bg-opacity-5 pt-8 pb-28 tablet:pt-22 tablet:pb-[96px]'>
+        <BookMakers></BookMakers>
+      </div>
+      {/* </div> */}
     </>
   );
 }

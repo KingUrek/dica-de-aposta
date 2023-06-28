@@ -2,11 +2,15 @@ import React, { Suspense } from 'react'
 import Loading from './loading'
 import TopGuessesUi from './ui'
 
-export default function TopGuesses() {
+type Props = {
+  slug?:string
+}
+
+export default function TopGuesses({slug}:Props) {
   return (
     <Suspense fallback={<Loading />}>
       {/* @ts-expect-error Async Server Component */}
-      <TopGuessesUi />
+      <TopGuessesUi slug={slug} />
   </Suspense>
   )
 }

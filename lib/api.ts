@@ -304,11 +304,11 @@ export async function getSportCarousel() {
   return data.carouselSportItems;
 }
 
-export async function getHighlightTip() {
+export async function getHighlightTip(slug='') {
   const data = await fetchAPI(
     `
     query HighlightTip {
-      highlightTip {
+      highlightTip(tournament: "${slug}") {
         title
         image
         link
@@ -333,11 +333,11 @@ export async function getHighlightTip() {
   return data.highlightTip;
 }
 
-export async function getAllTips() {
+export async function getAllTips(slug='') {
   const data = await fetchAPI(
     `
     {
-      tips {
+      tips(where: {tournament: "${slug}"}) {
         nodes {
           id
           content
@@ -379,11 +379,11 @@ export async function getAllTips() {
   return data.tips.nodes;
 }
 
-export async function getMultiples() {
+export async function getMultiples(slug='',activeOnly=false) {
   const data = await fetchAPI(
     `
     {
-      multiples {
+      multiples(where: {active: ${activeOnly?'true':'false'}, tournament: "${slug}"}) {
         nodes {
           databaseId
           title
@@ -456,3 +456,24 @@ export async function search(search, page=1, postsperpage=5) {
   );
   return data.tips.edges;
 }
+
+export async function getTournaments() {
+  const data = await fetchAPI(
+    `
+    {
+      tournaments {
+        nodes {
+          name
+          slug
+          uri
+          databaseId
+        }
+      }
+    }
+
+`
+  );
+  return data.tournaments.nodes;
+}
+
+

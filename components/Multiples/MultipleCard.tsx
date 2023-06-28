@@ -14,7 +14,7 @@ export default function MultipleCard({
   const dateFormat = "dd/MM/YYY 'às' k'h'mm";
 
   return (
-    <div className={cn('bg-primary-light rounded overflow-hidden max-w-[365px] hidden [&:nth-of-type(1)]:block tablet:[&:nth-of-type(2)]:block tabletg:block tabletg:[&:nth-of-type(1)]:hidden', {
+    <div className={cn('bg-primary-light rounded overflow-hidden max-w-[365px] hidden [&:nth-of-type(1)]:block tablet:[&:nth-of-type(2)]:block tabletg:block', {
       
     })}>
       <p className=' text-white font-bold text-20 mx-4 text-center py-4'>

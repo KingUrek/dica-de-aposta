@@ -4,8 +4,8 @@ import Button from '../ui/button';
 import { getMultiples } from '../../lib/api';
 import MultipleCard from './MultipleCard';
 
-export default async function MultiplesUi() {
-  let multiples = await getMultiples();
+export default async function MultiplesUi({slug}) {
+  let multiples = await getMultiples(slug);
 
   return (
     <Container>

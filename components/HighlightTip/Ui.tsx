@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { format, parseISO } from 'date-fns';
 
 //TODO: remover Logo mock
@@ -8,10 +8,12 @@ import Button from '../ui/button';
 import Modal from './Modal';
 import ModalButton from './ModalButton';
 
-export default async function HighlightTipUi() {
-  const data = await getHighlightTip();
-  const modalInfo = (await getAllTips()).find(({ slug }) => data.slug === slug);
-  const { location, teams, tournamentName, bookmakerOdds } = data;
+export default async function HighlightTipUi({ slug }) {
+  const data = await getHighlightTip(slug);
+  //TODO: mudar a query abaixo para buscar a dica por id em vez de buscar todas e filtrar
+  const modalInfo = (await getAllTips(slug)).find(({ slug }) => data.slug === slug);
+
+  const { location, teams, tournamentName, bookmakerOdds } = {...data};
   const dateFormat = "dd 'de' MMM. 'de' YYY 'às' k'h'mm";
 
   return (
