@@ -6,7 +6,7 @@ export default async function CasasDeAposta() {
 
   
   return (
-    <Container className='mt-28 flex flex-col'>
+    <Container className='mt-28 tablet:mt-40 flex flex-col'>
       <BookMakerArchive></BookMakerArchive>
     </Container>
   )

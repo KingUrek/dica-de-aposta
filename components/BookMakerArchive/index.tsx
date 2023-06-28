@@ -20,10 +20,10 @@ export default function BookMakerArchive() {
 
   return (
     <>
-      <h1 className='font-bold text-28 mb-12 text-center text-primary-desatured'>
+      <h1 className='mb-12 tablet:mb-28 text-center text-primary-desatured'>
         Casas de Aposta
       </h1>
-      <div className='flex gap-12 flex-wrap justify-center items-stretch mb-12'>
+      <div className='flex gap-12 tablet:gap-20 flex-wrap justify-center items-stretch mb-12 tablet:mb-20'>
         {cards.map((bookMaker) => {
          {/* @ts-expect-error */}
 
