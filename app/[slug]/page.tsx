@@ -38,8 +38,11 @@ export default async function Page({ params }) {
           </div>
 
           <TelegramGroup></TelegramGroup>
-          {/* @ts-expect-error Async Server Component */}
-          <HighlightMultiple slug={params.slug}></HighlightMultiple>
+          <div className='hidden tablet:block'>
+            {/* @ts-expect-error Async Server Component */}
+            <HighlightMultiple slug={params.slug}></HighlightMultiple>
+          </div>
+
         </div>
       </Container>
       <div className=' mb-24'>
