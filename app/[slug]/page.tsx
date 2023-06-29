@@ -12,54 +12,38 @@ import Multiples from '../../components/Multiples';
 import HighlightMultiple from '../../components/Multiples/HighlightMultiple';
 import { getTournaments } from '../../lib/api';
 import { notFound } from 'next/navigation';
+import Header from '../../components/Header/Header';
+import LeagueTag from '../../components/LeagueTag';
 
 export async function generateStaticParams() {
-  const tournaments = await getTournaments()
- return tournaments.map(({slug}) => slug)
+  const tournaments = await getTournaments();
+  return tournaments.map(({ slug }) => slug);
 }
 
 export default async function Page({ params }) {
-  console.log(params)
-  // const tournaments = await getTournaments()
-  // const tournamentsSlugs = tournaments.map(({slug}) => slug)
-  // if (!tournamentsSlugs.includes(params.slug)) {
-  //   notFound()
-  // }
-  
-  
+  const tournaments = await getTournaments();
+  const currentTournament = tournaments.find((tour) => {
+    return tour.slug === params.slug;
+  });
   return (
-<>
-      <div className='tablet:bg-azure'>
-        {/* <div
-          className={`tablet:container tablet:mx-auto tablet:px-18 tablet:bg-azure tablet:flex tablet:flex-row-reverse desktop:px-[125px]`}
-        >
-          <div className='bg-azure py-12 tablet:py-24'>
-            <Container className='tablet:px-0 desktop:!px-0'>
-              <BetHouseCards></BetHouseCards>
-            </Container>
-          </div>
-          <Container className='tablet:px-0 tablet:flex items-center desktop:!px-0'>
-            <div className='mt-8 mb-12 tablet:m-0'>
-              <SportsCards></SportsCards>
-            </div>
-          </Container>
-        </div> */}
-      </div>
-      <Container>
+    <>
+      <Header slug={params.slug} tournaments={tournaments}></Header>
+      {currentTournament.parent && <Container className='pt-12'>
+        <LeagueTag league={'Liga America'}></LeagueTag>
+      </Container>}
+      <Container className='pt-19'>
         <div className='grid tablet:grid-cols-[3fr_2fr] gap-14 grid-rows-[236px_1fr] tablet:pt-28 pb-26 '>
-          {/* <Container className='relative my-[56px] max-w-[425px] '> */}
           <div className=' row-span-full'>
             <HighlightTip slug={params.slug}></HighlightTip>
           </div>
 
           <TelegramGroup></TelegramGroup>
-      {/* @ts-expect-error Async Server Component */}
+          {/* @ts-expect-error Async Server Component */}
           <HighlightMultiple slug={params.slug}></HighlightMultiple>
         </div>
       </Container>
       <div className=' mb-24'>
-
-      <Multiples slug={params.slug}></Multiples>
+        <Multiples slug={params.slug}></Multiples>
       </div>
       <BestBookmaker></BestBookmaker>
       <div className='bg-primary mb-32 bg-opacity-5 pb-18 pt-9 tablet:pt-22 relative tablet:pb-[116px] tablet:mb-[212px]'>

@@ -10,10 +10,12 @@ import TopGuesses from '../components/TopGuesses';
 import TopTips from '../components/TopTips';
 import Multiples from '../components/Multiples';
 import HighlightMultiple from '../components/Multiples/HighlightMultiple';
+import Header from '../components/Header/Header';
 
 export default function Page() {
   return (
     <>
+      <Header></Header>
       <div className='tablet:bg-azure'>
         <div
           className={`tablet:container tablet:mx-auto tablet:px-18 tablet:bg-azure tablet:flex tablet:flex-row-reverse desktop:px-[125px]`}
@@ -38,13 +40,12 @@ export default function Page() {
           </div>
 
           <TelegramGroup></TelegramGroup>
-      {/* @ts-expect-error Async Server Component */}
+          {/* @ts-expect-error Async Server Component */}
           <HighlightMultiple></HighlightMultiple>
         </div>
       </Container>
       <div className=' mb-24'>
-
-      <Multiples></Multiples>
+        <Multiples></Multiples>
       </div>
       <BestBookmaker></BestBookmaker>
       <div className='bg-primary mb-32 bg-opacity-5 pb-18 pt-9 tablet:pt-22 relative tablet:pb-[116px] tablet:mb-[212px]'>

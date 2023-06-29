@@ -16,8 +16,8 @@
 
 @layer base{
 
-  p,span{
-    @apply text-14
+  p,span,button,time{
+    @apply text-14 tablet:text-16;
   }
 
   html{
@@ -48,6 +48,10 @@
   .backdrop::backdrop{
     background-color: #000000;
     opacity: 70%;
+  }
+
+  .inner-shadown{
+    box-shadow: inset 0px 5px 6px -5px  black;
   }
 }
 /* .has-text-align-left {

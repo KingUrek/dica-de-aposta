@@ -21,7 +21,6 @@ export default function RootLayout({
       className={`${AvenirNext.variable} ${Tittilium.variable} font-sans`}
     >
       <body>
-        <Header></Header>
         {children}
         <Footer></Footer>
       </body>

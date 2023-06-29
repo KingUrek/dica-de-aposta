@@ -13,12 +13,39 @@ import SearchIcon from '../../public/icons/search.svg';
 import classNames from 'classnames';
 import { useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import LeagueSubmenu from './LeagueSubmenu';
 
-export default function Header() {
-  const params = usePathname();
-  console.log('search', params)
+type Props = {
+  slug?: string,
+  tournaments?:any[]
+}
+
+export default function Header({ slug = '', tournaments }:Props) {
+  function getSubmenus() {
+    if (slug && tournaments) {
+      
+      let currentTournament = tournaments.find((tour) => {
+        return tour.slug === slug;
+      });
+      if (currentTournament.parent) {
+        currentTournament = tournaments.find((tour) => {
+          return tour.slug === currentTournament.parent.node.slug;
+        });
+      }
+      if (
+        currentTournament?.children &&
+        currentTournament?.children.nodes.length >= 2
+      ) {
+        const submenus = currentTournament.children.nodes;
+        return submenus;
+      }
+    }
+    return null
+  }
+
   const [isOpen, setIsOpen] = useState(false);
   const [searchIsOpen, setSearchIsOpen] = useState(false);
+  const submenuOptions = getSubmenus();
   const menuOptions = [
     { title: 'Home', link: '/' },
     { title: 'Palpites', link: '/palpites' },
@@ -77,7 +104,9 @@ export default function Header() {
           </div>
           <Search></Search>
         </div>
+        {submenuOptions?.length && <LeagueSubmenu options={submenuOptions}></LeagueSubmenu>}
       </Container>
+
       <div
         className={classNames(
           'bg-[#f2f9fa] max-h-[370px] absolute w-full tabletx:hidden overflow-hidden transition-all z-50',
@@ -96,6 +125,7 @@ export default function Header() {
           </HeaderOption>
         ))}
       </div>
+
     </header>
   );
 }

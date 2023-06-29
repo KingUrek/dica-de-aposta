@@ -467,6 +467,22 @@ export async function getTournaments() {
           slug
           uri
           databaseId
+          children {
+            nodes {
+              name
+              slug
+              uri
+              databaseId
+            }
+          }
+          parent {
+            node {
+              name
+              slug
+              uri
+              databaseId
+            }
+          }
         }
       }
     }
