@@ -13,7 +13,6 @@ export default async function HighlightTipUi({ slug }) {
   //TODO: mudar a query abaixo para buscar a dica por id em vez de buscar todas e filtrar
   const modalInfo = (await getAllTips(slug)).find(({ slug }) => data.slug === slug);
 
-  const { location, teams, tournamentName, bookmakerOdds } = {...data};
   const dateFormat = "dd 'de' MMM. 'de' YYY 'às' k'h'mm";
 
   return (
@@ -25,7 +24,7 @@ export default async function HighlightTipUi({ slug }) {
         <div className='w-full h-full absolute top-0 left-0 gradient-80 z-10'></div>
         <div className='z-20 relative'>
           <p className='rounded-sm bg-primary text-white text-10 py-2 px-18 font-bold w-fit cursor-pointer tablet:text-18'>
-            {tournamentName}
+            {data?.tournamentName}
           </p>
           <div className='flex flex-col gap-12 mb-18 tablet:mb-16'>
             <div className='flex items-end justify-between mt-18 gap-5'>
@@ -35,10 +34,10 @@ export default async function HighlightTipUi({ slug }) {
                     width={40}
                     height={40}
                     alt='league logo'
-                    src={teams[0].logo}
+                    src={data.teams[0].logo}
                   />
                   <p className=' text-28 text-white font-tittilium font-bold text-center'>
-                    {teams[0].name}
+                    {data.teams[0].name}
                   </p>
                 </div>
               </div>
@@ -51,10 +50,10 @@ export default async function HighlightTipUi({ slug }) {
                     width={40}
                     height={40}
                     alt='league logo'
-                    src={teams[1].logo}
+                    src={data.teams[1].logo}
                   />
                   <p className=' text-36 text-white font-tittilium font-bold text-center'>
-                    {teams[1].name}
+                    {data.teams[1].name}
                   </p>
                 </div>
               </div>
@@ -63,13 +62,13 @@ export default async function HighlightTipUi({ slug }) {
               {format(parseISO(data.eventTime), dateFormat)}
             </p>
             <p className=' text-16 font-bold text-white text-center'>
-              {location}
+              {data?.location}
             </p>
           </div>
           <div className=' flex content-between gap-5 justify-center'>
-            {bookmakerOdds.map(({ odd, bookmakerLogo }) => {
+            {data?.bookmakerOdds.map(({ odd, bookmakerLogo }) => {
               return (
-                <div className=' h-22 items-center border-2 border-white rounded flex px-2 py-6 w-fit bg-primary gap-3'>
+                <div key={bookmakerLogo} className=' h-22 items-center border-2 border-white rounded flex px-2 py-6 w-fit bg-primary gap-3'>
                   <Image
                     width={50}
                     height={20}
