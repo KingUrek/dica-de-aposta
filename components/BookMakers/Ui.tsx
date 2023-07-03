@@ -5,7 +5,7 @@ import { getBookmakers } from '../../lib/api';
 import Button from '../ui/button';
 
 export default async function BookMakersUi() {
-  const data = await getBookmakers();
+  const data = (await getBookmakers()).nodes;
   return (
     <Container>
       <h2 className=' text-primary-desatured mb-12 tablet:mb-[56px] text-center tablet:text-40'>Casas de Aposta</h2>

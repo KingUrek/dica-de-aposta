@@ -3,7 +3,7 @@ import Container from '../ui/container';
 import Card from './Card';
 
 export default async function BookmakerCardsUi() {
-  const data = await getBookmakers('top');
+  const data = (await getBookmakers('top')).nodes;
   const bonusCard = data.find(({ isBonus }) => isBonus)
   return (
     <div className='flex gap-4 tablet:gap-8 ml-auto'>
