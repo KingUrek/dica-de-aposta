@@ -272,10 +272,7 @@ export async function getBookmakers(homeplace?: string, page = 1, perPage=4) {
     }
   `
   );
-  if (page) {
-    return data.bookmakers
-  }
-  return data.bookmakers.nodes;
+  return data.bookmakers;
 }
 
 export async function getTelegramLink() {

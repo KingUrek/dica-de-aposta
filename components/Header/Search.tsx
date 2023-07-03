@@ -1,6 +1,8 @@
 'use client'
 import { useState } from 'react';
-import SearchIcon from '../../public/icons/search.svg';
+import SearchIcon from '../../public/icons/searchBig.svg';
+import ClearIcon from '../../public/icons/ClearSearch.svg';
+
 import { useRouter } from 'next/navigation';
 
 export default function Search() {
@@ -16,7 +18,12 @@ export default function Search() {
       />
       <button className='absolute right-6 top-1/2 -translate-y-1/2' onClick={() => router.push(`/busca?s=${search}`)} >
         {/* <Image alt='search icon' src=""></Image> */}
+        <div className='flex gap-5 items-center'>
         <SearchIcon className='text-primary'></SearchIcon>
+        {search && <ClearIcon onClick={() => setSearch('')} className='text-primary'></ClearIcon>}
+
+        </div>
+
       </button>
     </div>
   );

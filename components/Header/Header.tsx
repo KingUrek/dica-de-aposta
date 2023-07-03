@@ -14,6 +14,7 @@ import classNames from 'classnames';
 import { useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import LeagueSubmenu from './LeagueSubmenu';
+import Link from 'next/link';
 
 type Props = {
   slug?: string,
@@ -27,7 +28,7 @@ export default function Header({ slug = '', tournaments }:Props) {
       let currentTournament = tournaments.find((tour) => {
         return tour.slug === slug;
       });
-      if (currentTournament.parent) {
+      if (currentTournament?.parent) {
         currentTournament = tournaments.find((tour) => {
           return tour.slug === currentTournament.parent.node.slug;
         });
@@ -57,13 +58,15 @@ export default function Header({ slug = '', tournaments }:Props) {
       <Container id='header'>
         <div className=' py-5 tabletx:py-11 flex justify-between items-center gap-10 tabletx:justify-normal tabletx:gap-[48px] relative '>
           {!searchIsOpen && (
-            <Image placeholder='blur' priority src={Logo} alt='logo'></Image>
+            <Link className=' shrink-0' href={'/'}>
+            <Image priority src={Logo} alt='logo'></Image>
+            </Link>
           )}
           <div className='flex gap-[26px] items-center tabletx:hidden w-full ml-auto justify-end'>
             {searchIsOpen && (
               <>
                 <input
-                  className='bg-transparent rounded-sm py-6 text-white text-10 pl-16 border-white border-2 placeholder:text-white w-full'
+                  className='bg-transparent rounded py-6 text-white text-10 pl-16 border-white border-2 placeholder:text-white w-full'
                   placeholder='Digite aqui sua busca'
                 ></input>
                 <CloseIcon
@@ -87,7 +90,7 @@ export default function Header({ slug = '', tournaments }:Props) {
                     'absolute left-5': searchIsOpen,
                   })}
                 ></SearchIcon>
-                <Button onClick={() => setIsOpen(!isOpen)}>Menu</Button>
+                <Button className=' leading-6' onClick={() => setIsOpen(!isOpen)}>MENU</Button>
               </>
             )}
           </div>

@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import Container from '../../components/ui/container';
 import BookMakerArchive from '../../components/BookMakerArchive';
 import Header from '../../components/Header/Header';
@@ -8,9 +8,7 @@ export default async function CasasDeAposta() {
     <>
       <Header></Header>
       <Container className='mt-28 tablet:mt-40 flex flex-col'>
-        <Suspense fallback={<p>Gabriel</p>}>
-          <BookMakerArchive></BookMakerArchive>
-        </Suspense>
+        <BookMakerArchive></BookMakerArchive>
       </Container>
     </>
   );

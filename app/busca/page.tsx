@@ -4,6 +4,7 @@ import Container from '../../components/ui/container';
 import { useSearchParams } from 'next/navigation';
 import { search } from '../../lib/api';
 import SearchCard from '../../components/SearchCard';
+import Header from '../../components/Header/Header';
 
 export default function Busca() {
   const [searchItems, setSearchItems] = useState([]);
@@ -24,47 +25,52 @@ export default function Busca() {
   }, [searchParam]);
 
   return (
-    <Container className=' mt-28 mb-48 flex-grow'>
-      <h1 className='text-primary text-28 tablet:text-40 font-bold font-tittilium mb-16'>
-        Resultado de busca
-      </h1>
-      <p className='font-14 tablet:font-16 text-primary-gray'>
-        Você pesquisou por: "{searchParam}"
-      </p>
+    <>
+      <Header></Header>
+      <Container className=' mt-28 mb-48 flex-grow'>
+        <h1 className='text-primary text-28 tablet:text-40 font-bold font-tittilium mb-16'>
+          Resultado de busca
+        </h1>
+        <p className='font-14 tablet:font-16 text-primary-gray'>
+          Você pesquisou por: "{searchParam}"
+        </p>
 
-      {loading ? (
-        <div className='flex flex-col gap-12 mt-22 '>
-          {[1, 2, 3].map((key) => {
-            return (
-              <div
-                key={key}
-                className='rounded animate-pulse bg-gray-dark h-[200px] w-full pt-5'
-              ></div>
-            );
-          })}
-        </div>
-      ) : (
-        <>
-          {searchItems.length ? (
-            <>
-              {' '}
+        {loading ? (
+          <div className='flex flex-col gap-12 mt-22 '>
+            {[1, 2, 3].map((key) => {
+              return (
+                <div
+                  key={key}
+                  className='rounded animate-pulse bg-gray-dark h-[200px] w-full pt-5'
+                ></div>
+              );
+            })}
+          </div>
+        ) : (
+          <>
+            {searchItems.length ? (
+              <>
+                {' '}
+                <p className='font-14 tablet:font-16 text-primary-gray mb-28'>
+                  Encontramos ({searchItems.length}) resultados para a sua busca
+                </p>
+                <div className='flex flex-col gap-12 '>
+                  {searchItems.map((item) => {
+                    {
+                      /* @ts-expect-error */
+                    }
+                    return <SearchCard key={item.id} {...item} />;
+                  })}
+                </div>
+              </>
+            ) : (
               <p className='font-14 tablet:font-16 text-primary-gray mb-28'>
-                Encontramos ({searchItems.length}) resultados para a sua busca
+                Não encontramos nenhum resultado para a sua busca.
               </p>
-              <div className='flex flex-col gap-12 '>
-                {searchItems.map((item) => {
-                  {/* @ts-expect-error */}
-                  return <SearchCard key={item.id} {...item} />;
-                })}
-              </div>
-            </>
-          ) : (
-            <p className='font-14 tablet:font-16 text-primary-gray mb-28'>
-              Não encontramos nenhum resultado para a sua busca.
-            </p>
-          )}
-        </>
-      )}
-    </Container>
+            )}
+          </>
+        )}
+      </Container>
+    </>
   );
 }

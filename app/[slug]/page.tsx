@@ -28,7 +28,7 @@ export default async function Page({ params }) {
   return (
     <>
       <Header slug={params.slug} tournaments={tournaments}></Header>
-      {currentTournament.parent && <Container className='pt-12'>
+      {currentTournament?.parent && <Container className='pt-12'>
         <LeagueTag league={'Liga America'}></LeagueTag>
       </Container>}
       <Container className='pt-19'>
