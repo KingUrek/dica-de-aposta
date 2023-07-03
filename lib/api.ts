@@ -237,6 +237,12 @@ export async function getBookmakers(homeplace?: string, page = 1, perPage=4) {
     `
     query bookmakersInfo {
       bookmakers${query} {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+          endCursor
+          startCursor
+        }
         nodes {
           databaseId
           title
@@ -266,6 +272,9 @@ export async function getBookmakers(homeplace?: string, page = 1, perPage=4) {
     }
   `
   );
+  if (page) {
+    return data.bookmakers
+  }
   return data.bookmakers.nodes;
 }
 

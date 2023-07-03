@@ -4,7 +4,6 @@ import GuessCard  from '../TopGuesses/Card'
 
 export default async function GuessesArchiveBlockUi({ tournament }) {
   const guesses = await getAllTips(tournament.slug)
-  console.log(guesses)
   if (!guesses.length) {
     return null;
   }
