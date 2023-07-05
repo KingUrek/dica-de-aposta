@@ -45,10 +45,7 @@ export default async function Page({ params }) {
 
         </div>
       </Container>
-      <div className=' mb-24'>
-        <Multiples slug={params.slug}></Multiples>
-      </div>
-      <BestBookmaker></BestBookmaker>
+
       <div className='bg-primary mb-32 bg-opacity-5 pb-18 pt-9 tablet:pt-22 relative tablet:pb-[116px] tablet:mb-[212px]'>
         <div className=' mb-28'>
           <TopGuesses slug={params.slug}></TopGuesses>
@@ -57,6 +54,10 @@ export default async function Page({ params }) {
           <PortelaTips></PortelaTips>
         </div>
       </div>
+      <div className=' mb-24'>
+        <Multiples slug={params.slug}></Multiples>
+      </div>
+      <BestBookmaker></BestBookmaker>
       <div className=' mb-16 mt-10'>
         <TopTips slug={params.slug}></TopTips>
       </div>
