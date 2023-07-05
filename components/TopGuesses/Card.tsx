@@ -53,7 +53,7 @@ export default function Card({
                   alt='league logo'
                   src={tipTimes[0].teamLogo}
                 />
-                <p className=' text-28 text-white font-tittilium font-bold text-center'>
+                <p className=' text-20 text-white font-tittilium font-bold text-center'>
                   {tipTimes[0].title}
                 </p>
               </div>
@@ -70,15 +70,15 @@ export default function Card({
                   alt='league logo'
                   src={tipTimes[1].teamLogo}
                 />
-                <p className=' text-28 text-white font-tittilium font-bold text-center'>
+                <p className=' text-20 text-white font-tittilium font-bold text-center'>
                   {tipTimes[1].title}
                 </p>
               </div>
             </div>
           </div>
           <div className='mt-auto'>
-            <p className='text-white text-14 tablet:text-16'>{tipContent}</p>
-            <Link href={`/palpite${uri}`} className='text-white font-bold text-14 tablet:text-16 hover:text-orange'>Veja mais</Link>
+            <span className='text-white text-14 tablet:text-16'>{tipContent}</span>
+            <Link href={`/palpite${uri}`} className='text-white font-bold text-14 tablet:text-16 hover:text-orange ml-2'>Veja mais</Link>
 
           </div>
         </div>

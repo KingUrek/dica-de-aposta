@@ -371,6 +371,7 @@ export async function getAllTips(slug='') {
           title
           uri
           tipContent
+          tipBetUrl
           tipEventDatetime
           featuredImage {
             node {

@@ -58,7 +58,7 @@ export default async function Page({ params }) {
         <Multiples slug={params.slug}></Multiples>
       </div>
       <BestBookmaker></BestBookmaker>
-      <div className=' mb-16 mt-10'>
+      <div className=' pb-16 pt-10 bg-gray-tipBlockBg'>
         <TopTips slug={params.slug}></TopTips>
       </div>
       <div className='bg-primary bg-opacity-5 pt-8 pb-28 tablet:pt-22 tablet:pb-[96px]'>

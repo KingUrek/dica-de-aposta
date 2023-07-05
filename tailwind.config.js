@@ -22,7 +22,9 @@ module.exports = {
         light: '#F1F1F1',
         search: '#E7E7E7',
         seachText: '#858585',
-        tipbg: '#E4E4E4'
+        tipbg: '#E4E4E4',
+        tipBlockBg:'rgba(243, 243, 244, 0.50)'
+
       },
       black: {
         darkest: '#000000',
