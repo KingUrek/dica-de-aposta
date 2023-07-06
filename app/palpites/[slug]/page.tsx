@@ -12,6 +12,8 @@ import { getTournaments } from 'lib/api';
 import { notFound } from 'next/navigation';
 import Header from 'components/Header/Header';
 import LeagueTag from 'components/LeagueTag';
+import Link from 'next/link';
+import BackArrow from 'public/icons/BackArrow.svg'
 
 export async function generateStaticParams() {
   const tournaments = await getTournaments();
@@ -26,9 +28,14 @@ export default async function Page({ params }) {
   return (
     <>
       <Header slug={params.slug} tournaments={tournaments}></Header>
-      {currentTournament?.parent && <Container className='pt-12'>
-        <LeagueTag league={'Liga America'}></LeagueTag>
-      </Container>}
+      <Container>
+        <Link href={'/palpites'} className='text-16 font-bold text-primary-gray underline flex gap-6 items-center mt-9'><BackArrow></BackArrow>Voltar</Link>
+      </Container>
+      {currentTournament?.parent && (
+        <Container className='pt-12'>
+          <LeagueTag league={currentTournament.name}></LeagueTag>
+        </Container>
+      )}
       <Container className='pt-19'>
         <div className='grid tablet:grid-cols-[3fr_2fr] gap-28 tablet:gap-14 grid-rows-[236px_1fr] tablet:pt-28 pb-26 '>
           <div className=' row-span-full'>
@@ -40,24 +47,18 @@ export default async function Page({ params }) {
             {/* @ts-expect-error Async Server Component */}
             <HighlightMultiple slug={params.slug}></HighlightMultiple>
           </div>
-
         </div>
       </Container>
 
-      <div className='bg-primary mb-32 bg-opacity-5 pb-18 pt-9 tablet:pt-22 relative tablet:pb-[116px] tablet:mb-[212px]'>
-        <div className=' mb-28'>
-          <TopGuesses slug={params.slug}></TopGuesses>
-        </div>
-        <div className='tablet:absolute tablet:left-[50%] tablet:translate-x-[-50%] w-full'>
-          <PortelaTips></PortelaTips>
-        </div>
-      </div>
-      <div className=' mb-24'>
-        <Multiples slug={params.slug}></Multiples>
+      <div className=' mb-32 pt-9 tablet:pt-22 relative'>
+        <TopGuesses slug={params.slug}></TopGuesses>
       </div>
       <BestBookmaker></BestBookmaker>
       <div className=' pb-16 pt-10 bg-gray-tipBlockBg'>
         <TopTips slug={params.slug}></TopTips>
+      </div>
+      <div className='w-full'>
+        <PortelaTips></PortelaTips>
       </div>
       <div className='bg-primary bg-opacity-5 pt-8 pb-28 tablet:pt-22 tablet:pb-[96px]'>
         <BookMakers></BookMakers>

@@ -68,7 +68,7 @@ export default async function HighlightTipUi({ slug }) {
               {data?.location}
             </p>
           </div>
-          <div className=' flex content-between gap-5 justify-center'>
+          <div className=' flex content-between gap-5 justify-center tablet:mb-32'>
             {data?.bookmakerOdds.map(({ odd, bookmakerLogo }) => {
               return (
                 <div key={bookmakerLogo} className=' h-22 items-center border-2 border-white rounded flex px-2 py-6 w-fit bg-primary gap-3'>

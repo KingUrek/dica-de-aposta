@@ -339,11 +339,11 @@ export async function getHighlightTip(slug='') {
   return data.highlightTip;
 }
 
-export async function getAllTips(slug='') {
+export async function getAllTips(slug='', page=1, perPage=6) {
   const data = await fetchAPI(
     `
     {
-      tips(where: {tournament: "${slug}"}) {
+      tips(first:${page * perPage}, where: {tournament: "${slug}"}) {
         nodes {
           id
           content

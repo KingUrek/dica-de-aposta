@@ -3,6 +3,7 @@ import React from 'react';
 import { format, parseISO } from 'date-fns';
 import Button from '../ui/button';
 import Link from 'next/link';
+import classNames from 'classnames';
 
 export default function Card({
   tipTournaments,
@@ -11,12 +12,21 @@ export default function Card({
   tipTimes,
   uri,
   featuredImage,
-  tipContent
+  tipContent,
+  isHome = true,
 }) {
   const dateFormat = "dd 'de' MMM. 'de' YYY 'às' k'h'mm";
 
   return (
-    <div className='w-[365px] bg-primary-light rounded pt-4 overflow-hidden hidden [&:nth-of-type(1)]:block tabletp:[&:nth-of-type(2)]:block tabletg:block '>
+    <div
+      className={classNames(
+        'w-[365px] bg-primary-light rounded pt-4 overflow-hidden  ',
+        {
+          'hidden [&:nth-of-type(1)]:block tabletp:[&:nth-of-type(2)]:block tabletg:block':
+            isHome,
+        }
+      )}
+    >
       <div className='bg-gray relative h-full'>
         <Image
           fill
@@ -77,9 +87,15 @@ export default function Card({
             </div>
           </div>
           <div className='mt-auto'>
-            <span className='text-white text-14 tablet:text-16'>{tipContent}</span>
-            <Link href={`/palpite${uri}`} className='text-white font-bold text-14 tablet:text-16 hover:text-orange ml-2'>Veja mais</Link>
-
+            <span className='text-white text-14 tablet:text-16'>
+              {tipContent}
+            </span>
+            <Link
+              href={`/palpite${uri}`}
+              className='text-white font-bold text-14 tablet:text-16 hover:text-orange ml-2'
+            >
+              Veja mais
+            </Link>
           </div>
         </div>
       </div>

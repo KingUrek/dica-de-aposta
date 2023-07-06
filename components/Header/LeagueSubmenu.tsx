@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Container from '../ui/container';
 import classNames from 'classnames';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import MenuDropDownArrow from '../../public/icons/MenuDropdownArrow.svg';
 
 export default function LeagueSubmenu({ options = [] }) {
   const [selectedOption, setSelectedOption] = useState(null);
+  const pathname = usePathname()
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   
@@ -27,7 +28,7 @@ export default function LeagueSubmenu({ options = [] }) {
     }
     setLoading(true);
     /* @ts-expect-error */
-    router.push(`/${currentOption?.slug}`);
+    router.push(`${pathname.split('/').slice(0,-1).join('/')}/${currentOption?.slug}`);
   }
   return (
     <div className='my-5 tabletx:relative'>

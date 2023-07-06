@@ -22,7 +22,7 @@ export default function Button({
         <Link href={link}>
           <div
             className={
-              'text-16 tablet:text-20 text-primary-gray rounded py-8 tablet:py-12 text-center font-bold border-primary-gray border-2 tablet:max-w-[300px] m-auto' +
+              'text-16 tablet:text-20 text-primary-gray rounded py-8 tablet:py-12 text-center font-bold border-primary-gray border-2 max-w-[360px] tablet:max-w-[300px] m-auto' +
               ' ' +
               className
             }
