@@ -1,4 +1,4 @@
-// export const revalidate = 10
+export const revalidate = 10
 import Footer from '../components/Footer';
 import Header from '../components/Header/Header';
 
