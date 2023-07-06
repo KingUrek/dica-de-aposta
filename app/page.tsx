@@ -33,7 +33,7 @@ export default function Page() {
         </div>
       </div>
       <Container>
-        <div className='grid tablet:grid-cols-[3fr_2fr] gap-14 grid-rows-[236px_1fr] tablet:pt-28 pb-26 '>
+        <div className='grid tablet:grid-cols-[3fr_2fr] gap-28 tablet:gap-14 grid-rows-[236px_1fr] tablet:pt-28 pb-26 '>
           {/* <Container className='relative my-[56px] max-w-[425px] '> */}
           <div className=' row-span-full'>
             <HighlightTip></HighlightTip>

@@ -77,7 +77,7 @@ export default function Card({
           </p>
         </div>
 
-        <div className='flex items-stretch justify-center mt-12 gap-5 tablet:absolute tablet:left-[30px] tablet:bottom-[46px] w-[240px] '>
+        <div className='flex items-stretch justify-center tablet:top-20 mt-12 gap-5 tablet:absolute tablet:left-[30px] tablet:bottom-[46px] w-[240px] '>
           <div className='flex flex-col items-center gap-9 max-w-[100px] h-full'>
             <Image
               style={{ objectFit: 'contain', height: 40, width: 40 }}

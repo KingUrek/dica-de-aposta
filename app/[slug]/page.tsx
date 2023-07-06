@@ -32,7 +32,7 @@ export default async function Page({ params }) {
         <LeagueTag league={'Liga America'}></LeagueTag>
       </Container>}
       <Container className='pt-19'>
-        <div className='grid tablet:grid-cols-[3fr_2fr] gap-14 grid-rows-[236px_1fr] tablet:pt-28 pb-26 '>
+        <div className='grid tablet:grid-cols-[3fr_2fr] gap-28 tablet:gap-14 grid-rows-[236px_1fr] tablet:pt-28 pb-26 '>
           <div className=' row-span-full'>
             <HighlightTip slug={params.slug}></HighlightTip>
           </div>
