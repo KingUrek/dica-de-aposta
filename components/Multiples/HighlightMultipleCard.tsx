@@ -17,7 +17,7 @@ export default function MultipleCard({
   return (
     <div
       className={cn(
-        'bg-primary-light rounded overflow-hidden max-w-[365px] hidden [&:nth-of-type(1)]:block tablet:[&:nth-of-type(2)]:block tabletg:block',
+        'bg-primary-light rounded overflow-hidden hidden tablet:block',
         {}
       )}
     >
@@ -42,9 +42,9 @@ export default function MultipleCard({
                 src={multipleBookmaker.featuredImage.node.mediaItemUrl}
               ></Image>
             </div>
-            <div className='w-[120px] h-[70px] rounded flex flex-col justify-center items-center px-3 py-5 bg-primary border-2 border-white'>
-              <p className='font-bold text-white text-18 tablet:text-20'>Retorno</p>
-              <p className='font-bold text-white text-28'>{multipleProfit}</p>
+            <div className='w-[190px] h-[46px] rounded flex gap-4 justify-center items-center px-3 py-5 bg-primary border-2 border-white'>
+              <p className='font-bold text-white text-18'>Retorno</p>
+              <p className='font-bold text-white text-24'>{multipleProfit}</p>
             </div>
           </div>
           <p className='text-white font-bold pb-5 border-b border-white mb-22 tablet:mb-16'>
@@ -56,7 +56,7 @@ export default function MultipleCard({
                 match.length >= 2 && (
                   <div
                     key={match[0]?.databaseId + match[1]?.databaseId}
-                    className='w-[142px] h-[42px] rounded flex items-center justify-center px-3 bg-primary border-2 border-white gap-y-7 gap-x-9'
+                    className='w-[120px] h-[42px] rounded flex items-center justify-center px-3 bg-primary border-2 border-white gap-y-7 gap-x-9'
                   >
                     <Image
                       className=' object-contain w-13 h-13'
@@ -78,7 +78,10 @@ export default function MultipleCard({
               );
             })}
           </div>
-          <ModalButton modalId={'/'} />
+          <div className=' max-w-[298px] mx-auto'>
+            <ModalButton modalId={'/'} />
+
+          </div>
         </div>
       </div>
     </div>

@@ -58,7 +58,7 @@ export default function Card({
                 </p>
               </div>
             </div>
-            <p className=' h-full pt-26 text-28 text-white font-tittilium font-bold flex-1 text-center max-w-[40px]'>
+            <p className=' h-full pt-26 text-20 text-white font-tittilium font-bold flex-1 text-center max-w-[40px]'>
               X
             </p>
             <div className='flex flex-col items-center gap-9 ml-auto flex-1 h-full'>

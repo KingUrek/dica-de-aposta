@@ -9,12 +9,12 @@ export default async function MultiplesUi({slug}) {
 
   return (
     <Container>
-      <h2 className=' text-primary text-center text-28 mb-12'>
+      <h2 className=' text-primary text-center mb-12 tablet:mb-28'>
         Múltiplas
       </h2>
       <div className='flex gap-[50px] justify-center mb-20'>
 
-      {multiples.slice(0, 4).map((card) => {
+      {multiples.slice(0, 3).map((card) => {
         return <MultipleCard {...card}></MultipleCard>;
       })}
       </div>
