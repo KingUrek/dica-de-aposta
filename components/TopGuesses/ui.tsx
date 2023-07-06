@@ -6,9 +6,10 @@ import Button from '../ui/button';
 
 type Props = {
   slug?: string;
+  isArchive?: boolean;
 };
 
-export default async function TopGuessesUi({ slug }: Props) {
+export default async function TopGuessesUi({ slug, isArchive=false }: Props) {
   const data = (await getAllTips(slug)).filter(
     ({ tipEventDatetime, content, slug }) => {
       // return new Date(tipEventDatetime) >= new Date();

@@ -62,11 +62,13 @@ export default function Header({ slug = '', tournaments }:Props) {
             <Image priority src={Logo} alt='logo'></Image>
             </Link>
           )}
-          <div className='flex gap-[26px] items-center tabletx:hidden w-full ml-auto justify-end'>
+          <div className={classNames('flex gap-[26px] items-center tabletx:hidden w-full ml-auto justify-end', {
+            '!gap-6':searchIsOpen
+          })}>
             {searchIsOpen && (
               <>
                 <input
-                  className='bg-transparent rounded py-6 text-white text-10 pl-16 border-white border-2 placeholder:text-white w-full'
+                  className='bg-transparent rounded py-6 text-white text-10 pl-16 border-white border-2 placeholder:text-white w-full h-19'
                   placeholder='Digite aqui sua busca'
                 ></input>
                 <CloseIcon
@@ -94,7 +96,7 @@ export default function Header({ slug = '', tournaments }:Props) {
               </>
             )}
           </div>
-          <div className='hidden tabletx:flex gap-[34px]'>
+          <div className='hidden tabletx:flex gap-10 tabletg:gap-16 '>
             {menuOptions.map((option, index) => (
               <HeaderOptionDesktop
                 key={option.title}
