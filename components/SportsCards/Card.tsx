@@ -1,20 +1,18 @@
 import Image from 'next/image';
 import { ReactNode } from 'react';
 import cn from 'classnames';
+import Link from 'next/link';
 
 type Props = {
   children: ReactNode;
   icon: string;
   bgImage: string;
   isSmall: boolean;
+  slug: string;
 };
-export default function Card({
-  children,
-  icon,
-  bgImage,
-  isSmall,
-}: Props) {
+export default function Card({ children, icon, bgImage, isSmall, slug }: Props) {
   return (
+    <Link href={`/${slug}`}>
     <div
       className={cn(
         `rounded  py-7 bg-gray-dark flex items-center justify-center
@@ -29,23 +27,24 @@ export default function Card({
         <Image fill alt='imagem de fundo' src={bgImage}></Image>
       </div>
       <div className='w-full h-full absolute top-0 left-0 bg-black-darkest bg-opacity-60 z-10'></div>
-      <div className={cn('relative  shrink-0',         {
+      <div
+        className={cn('relative  shrink-0', {
           'w-8 h-8 tabletg:w-12 tabletg:h-12': isSmall,
           'w-10 h-10 tablet:w-12 tablet:h-12': !isSmall,
-        })}>
+        })}
+      >
         <Image className=' z-20' fill alt='sport icon' src={icon} />
       </div>
       <p
-        className={cn(
-          '   text-white font-bold font-tittilium z-20 ',
-          {
-            'text-12 mobileg:text-16 tabletg:text-20': isSmall,
-            'text-16 tablet:text-20': !isSmall,
-          }
-        )}
+        className={cn('   text-white font-bold font-tittilium z-20 ', {
+          'text-12 mobileg:text-16 tabletg:text-20': isSmall,
+          'text-16 tablet:text-20': !isSmall,
+        })}
       >
         {children}
       </p>
-    </div>
+      </div>
+    </Link>
+      
   );
 }

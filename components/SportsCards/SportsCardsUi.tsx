@@ -14,8 +14,8 @@ export default async function SportsCards() {
       'gap-4': isSmall,
       'gap-6':!isSmall
       })}>
-        {data.slice(0,4).map(({ name, sportIcon, sportImage }) => (
-          <Card key={name} icon={sportIcon} bgImage={sportImage} isSmall={isSmall}>
+        {data.slice(0,4).map(({ name, sportIcon, sportImage, slug }) => (
+          <Card key={name} icon={sportIcon} bgImage={sportImage} slug={slug} isSmall={isSmall}>
             {name}
           </Card>
         ))}
