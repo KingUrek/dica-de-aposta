@@ -5,7 +5,6 @@ import PortelaTipsUi from './Ui'
 export default function PortelaTips() {
   return (
     <Suspense fallback={<Loading />}>
-    {/* @ts-expect-error Async Server Component */}
     <PortelaTipsUi/>
   </Suspense>
   )
