@@ -9,7 +9,6 @@ type Props = {
 export default function TopGuesses({slug}:Props) {
   return (
     <Suspense fallback={<Loading />}>
-      {/* @ts-expect-error Async Server Component */}
       <TopGuessesUi slug={slug} />
   </Suspense>
   )
