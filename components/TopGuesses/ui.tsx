@@ -10,10 +10,9 @@ type Props = {
 };
 
 export default async function TopGuessesUi({ slug, isArchive=false }: Props) {
-  const data = (await getAllTips(slug)).filter(
+  const data = (await getAllTips(slug)).nodes.filter(
     ({ tipEventDatetime, content, slug }) => {
-      // return new Date(tipEventDatetime) >= new Date();
-      return true;
+      return new Date(tipEventDatetime) >= new Date();
     }
   );
   return (
