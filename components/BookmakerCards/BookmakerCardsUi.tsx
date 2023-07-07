@@ -8,7 +8,7 @@ export default async function BookmakerCardsUi() {
   return (
     <div className='flex gap-4 tablet:gap-8 ml-auto'>
       {data
-        .filter(({isBonus}) => !isBonus)
+        // .filter(({isBonus}) => !isBonus)
         .slice(0, 4)
         .map(
           (

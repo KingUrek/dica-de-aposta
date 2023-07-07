@@ -6,6 +6,6 @@ export default function TopTipsClient({slug=''}) {
   return (
     <Suspense fallback={<Loading />}>
       <TopTipsClientUi slug={slug} />
-  </Suspense>
+    </Suspense>
   )
 }
