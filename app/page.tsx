@@ -1,3 +1,4 @@
+export const revalidate = 10
 import BetHouseCards from '../components/BookmakerCards/Index';
 import SportsCards from '../components/SportsCards';
 import TelegramGroup from '../components/TelegramGroup';
