@@ -35,7 +35,7 @@ export default function Card({
         <div className='left-0 right-0 top-0 bottom-0 bg-black-darkest bg-opacity-50 absolute hidden tablet:block'></div>
       </div>
       <div className=' bg-gray-tipbg w-full py-12 px-11 tablet:px-16 tablet:flex tablet:gap-14 tabletg:gap-24'>
-        <div>
+        <div className=''>
           <div className='flex justify-between items-center pb-7'>
             <p className='rounded-sm bg-primary-dark text-white text-10 py-2 px-18 font-bold w-fit cursor-pointer tablet:absolute tablet:left-9 tablet:top-7 tablet:text-14 tablet:px-4 tablet:py-2'>
               {tipTournaments[0]?.name}
@@ -111,7 +111,7 @@ export default function Card({
           ></DropDownArrow>
         </div>
         <div
-          className={cn('w-full overflow-hidden tablet:max-h-none', {
+          className={cn('w-full overflow-hidden tablet:max-h-none tablet:w-[298px] ml-auto', {
             'max-h-0': !isOpen,
           })}
         >

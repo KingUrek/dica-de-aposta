@@ -52,7 +52,7 @@ export default function Header({ slug = '', tournaments }: Props) {
   const menuOptions = [
     { title: 'Home', link: '/' },
     { title: 'Palpites', link: '/palpites' },
-    { title: 'Dicas de Aposta', link: '/dicas-de-aposta' },
+    { title: 'Dicas de Aposta', link: '/dicas' },
     { title: 'Casas de Aposta', link: '/casas-de-aposta' },
   ];
   return (
