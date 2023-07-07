@@ -19,7 +19,7 @@ export default async function HighlightTipUi({ slug }) {
     <>
       <div className='rounded py-18 px-13  relative overflow-hidden tablet:px-16 h-full'>
         <div className='w-full h-full absolute top-0 left-0 z-10'>
-          <Image alt='background' src={data.image} fill></Image>
+          <Image style={{objectFit:'cover'}} alt='background' src={data.image} fill></Image>
         </div>
         <div className='w-full h-full absolute top-0 left-0 gradient-80 z-10'></div>
         <div className='z-20 relative h-full flex flex-col'>
