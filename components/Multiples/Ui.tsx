@@ -5,7 +5,7 @@ import { getMultiples } from '../../lib/api';
 import MultipleCard from './MultipleCard';
 
 export default async function MultiplesUi({slug}) {
-  let multiples = await getMultiples(slug);
+  let multiples = await getMultiples(slug, true);
 
   return (
     <Container>
