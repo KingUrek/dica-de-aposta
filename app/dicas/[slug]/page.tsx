@@ -26,6 +26,9 @@ export default async function Page({ params }) {
   const currentTournament = tournaments.find((tour) => {
     return tour.slug === params.slug;
   });
+  if (!currentTournament) {
+    notFound()
+  }
   return (
     <>
       <Header slug={params.slug} tournaments={tournaments}></Header>
