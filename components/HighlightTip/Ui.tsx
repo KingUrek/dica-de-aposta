@@ -32,7 +32,6 @@ export default async function HighlightTipUi({ slug }) {
                 <div className='flex flex-col gap-9 ml-auto items-center'>
                   <Image
                     className='w-20 h-20 tablet:w-29 tablet:h-29 object-contain'
-                    // style={{width:40, height:40, objectFit:'contain'}}
                     width={40}
                     height={40}
                     alt='league logo'
@@ -47,7 +46,7 @@ export default async function HighlightTipUi({ slug }) {
                 X
               </p>
               <div className='flex flex-col items-center gap-9 ml-auto flex-1'>
-                <div className='flex flex-col items-center gap-9'>
+                <div className='flex flex-col items-center gap-9 mr-auto'>
                   <Image
                     className='w-20 h-20 tablet:w-29 tablet:h-29 object-contain'
                     width={40}
