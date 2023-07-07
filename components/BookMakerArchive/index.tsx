@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import { getBookmakers } from '../../lib/api';
-import LoadMore from './Loadmore';
+import LoadMore from '../ui/Loadmore';
 import Loading from './Loading';
 import { PageInfo } from '../../lib/types';
 

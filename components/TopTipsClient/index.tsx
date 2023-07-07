@@ -7,6 +7,6 @@ export default function TopTips({slug=''}) {
     <Suspense fallback={<Loading />}>
       {/* @ts-expect-error Async Server Component */}
       <TopTipsUi slug={slug} />
-    </Suspense>
+  </Suspense>
   )
 }

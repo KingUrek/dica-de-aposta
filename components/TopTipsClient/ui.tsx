@@ -1,13 +1,34 @@
-import React from 'react';
+'use client'
+import React, { useEffect, useState } from 'react';
 import Container from '../ui/container';
 import Card from './Card';
 import { getAllTips } from '../../lib/api';
 import Button from '../ui/button';
+import { PageInfo } from '../../lib/types';
 
 export default async function TopTipsUi({slug=''}) {
   const data = (await getAllTips(slug)).nodes.filter(({ tipEventDatetime }) => {
     return new Date(tipEventDatetime) >= new Date();
   });
+
+  const [cards, setCards] = useState([]);
+  const [page, setPage] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [pageInfo, setPageInfo] = useState<Partial<PageInfo>>({hasNextPage:false})
+
+  async function loadPage(currentPage: number, perPage = 6) {
+    const tips = await getAllTips(undefined, currentPage, perPage);
+    console.log(tips)
+    setCards(tips.nodes);
+    setPageInfo(tips.pageInfo)
+    setPage(page + 1);
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    loadPage(1, 6);
+  }, []);
+  
   
   return (
     <Container>

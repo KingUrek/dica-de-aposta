@@ -4,7 +4,7 @@ import GuessCard from '../TopGuesses/Card';
 import Button from '../ui/button';
 
 export default async function GuessesArchiveBlockUi({ tournament }) {
-  const guesses = await getAllTips(tournament.slug, 1, 6);
+  const guesses = (await getAllTips(tournament.slug, 1, 6)).nodes;
   if (!guesses.length) {
     return null;
   }

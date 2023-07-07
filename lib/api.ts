@@ -345,6 +345,12 @@ export async function getAllTips(slug='', page=1, perPage=6) {
     `
     {
       tips(first:${page * perPage}, where: {tournament: "${slug}"}) {
+        pageInfo {
+          endCursor
+          hasNextPage
+          hasPreviousPage
+          startCursor
+        }
         nodes {
           id
           content
@@ -385,7 +391,7 @@ export async function getAllTips(slug='', page=1, perPage=6) {
 
 `
   );
-  return data.tips.nodes;
+  return data.tips;
 }
 
 export async function getMultiples(slug='',activeOnly=false) {
