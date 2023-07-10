@@ -13,8 +13,6 @@ export default function Modal({
   multipleBookmaker,
   multipleProfit,
   matches,
-  title,
-  databaseId,
 }) {
   const dateFormat = "dd/MM/YYY 'às' k'h'mm";
   const tableValues = [5, 50, 100, 200, 300];
@@ -32,7 +30,7 @@ export default function Modal({
   }
 
   function getProfitValue(value) {
-    const [multiplier = 1, divider = 1] = '100'.split('/');
+    const [multiplier = 1, divider = 1] = multipleProfit?.split('/');
     return `R$ ${value * +multiplier * +divider},00`;
   }
 

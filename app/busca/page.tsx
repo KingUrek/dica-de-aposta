@@ -14,7 +14,7 @@ export default function Busca() {
   //TODO: Refatorar a paginação da busca. Hoje ela não é realmente paginada, só vai multiplicando a quantidade que busca. Mudar para buscar sempre 6
 
   async function searchData() {
-    let searchData = await search(searchParam);
+    let searchData = await search(searchParam||'');
     searchData = searchData.filter(({ node }) => node.content);
     setSearchItems(searchData);
     setLoading(false);
