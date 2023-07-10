@@ -14,7 +14,6 @@ export default function BookMakerArchive() {
 
   async function loadPage(currentPage: number, perPage = 6) {
     const bookMakers = await getBookmakers(undefined, currentPage, perPage);
-    console.log(bookMakers)
     setCards(bookMakers.nodes);
     setPageInfo(bookMakers.pageInfo)
     setPage(page + 1);

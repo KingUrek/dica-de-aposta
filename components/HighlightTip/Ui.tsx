@@ -3,7 +3,7 @@ import { format, parseISO } from 'date-fns';
 
 //TODO: remover Logo mock
 import Image from 'next/image';
-import { getAllTips, getHighlightTip } from '../../lib/api';
+import { getAllTips, getHighlightTip, getTipBySlug } from 'lib/api';
 import Button from '../ui/button';
 import Modal from './Modal';
 import ModalButton from './ModalButton';
@@ -11,7 +11,7 @@ import ModalButton from './ModalButton';
 export default async function HighlightTipUi({ slug }) {
   const data = await getHighlightTip(slug);
   //TODO: mudar a query abaixo para buscar a dica por id em vez de buscar todas e filtrar
-  const modalInfo = (await getAllTips(slug)).nodes.find(({ slug }) => data.slug === slug);
+  const modalInfo = (await getTipBySlug(data.slug))
 
   const dateFormat = "dd 'de' MMM. 'de' YYY 'às' k'h'mm";
 

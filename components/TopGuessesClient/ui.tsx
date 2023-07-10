@@ -34,7 +34,6 @@ export default function TopGuessesUi({ slug, isArchive = false }: Props) {
 
   async function loadPage(currentPage: number, perPage = 6) {
     const tips = await getAllTips(slug, currentPage, perPage);
-    console.log(tips);
     setCards(tips.nodes);
     setPageInfo(tips.pageInfo);
     setPage(page + 1);

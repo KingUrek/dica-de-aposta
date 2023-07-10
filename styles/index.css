@@ -16,13 +16,14 @@
 
 @layer base{
 
-  p,span,button,time{
+  p,span,button,time, li{
     @apply text-14 tablet:text-16;
   }
 
 
-  dialog { 
+  dialog, form { 
     border: none !important;
+    outline: none;
   }
 
   html{

@@ -439,7 +439,7 @@ export async function getMultiples(slug='',activeOnly=false) {
   return data.multiples.nodes;
 }
 
-export async function search(search, page=1, postsperpage=5) {
+export async function search(search:string, page=1, postsperpage=5) {
   const data = await fetchAPI(
     `
     {
@@ -505,6 +505,52 @@ export async function getTournaments() {
 `
   );
   return data.tournaments.nodes;
+}
+
+export async function getTipBySlug(slug:string) {
+  const data = await fetchAPI(
+    `
+    {
+      tip(id: "${slug}", idType: SLUG) {
+        id
+        content
+        tipTournaments {
+          name
+        }
+        tipBookmakers {
+          bookmaker_odd
+          single_bookmaker {
+            title
+            featuredImage {
+              node {
+                mediaItemUrl
+              }
+            }
+          }
+        }
+        tipTimes {
+          databaseId
+          teamLogo
+          title
+        }
+        databaseId
+        slug
+        title
+        uri
+        tipContent
+        tipBetUrl
+        tipEventDatetime
+        featuredImage {
+          node {
+            mediaItemUrl
+          }
+        }
+      }
+    }
+
+`
+  );
+  return data.tip;
 }
 
 

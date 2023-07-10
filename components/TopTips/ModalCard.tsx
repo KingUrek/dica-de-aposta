@@ -38,10 +38,10 @@ export default function Card({
         <div className='flex flex-col '>
           <div className='flex justify-between items-center pb-7 tablet:mb-9 relative'>
             <p className='rounded-sm bg-primary-dark text-white text-10 py-2 px-18 font-bold w-fit cursor-pointer tablet:left-9 tablet:top-7 tablet:text-14 tablet:px-4 tablet:py-2 tablet:min-w-[130px] text-center'>
-              {tipTournaments[0]?.name}
+              {tipTournaments && tipTournaments[0]?.name}
             </p>
             <div className='px-7 py-5 bg-primary-dark rounded border-solid border-2 border-primary-gray flex justify-center absolute right-[-328px]'>
-              <Image
+              {tipBookmakers && <Image
                 alt={'logo ' + tipBookmakers[0].single_bookmaker[0].title}
                 width={60}
                 height={20}
@@ -49,7 +49,7 @@ export default function Card({
                   tipBookmakers[0].single_bookmaker[0].featuredImage.node
                     .mediaItemUrl
                 }
-              ></Image>
+              ></Image>}
             </div>
           </div>
           <div className='flex-col tablet:gap-4 hidden tablet:flex mb-12 tablet:order-1'>
@@ -57,11 +57,11 @@ export default function Card({
               {title}
             </p>
             <p className='rounded-sm bg-primary-dark text-white text-10 py-2 px-4 font-bold w-fit cursor-pointer tabletg:text-14'>
-              ODD {tipBookmakers[0].bookmaker_odd}
+              ODD {tipBookmakers && tipBookmakers[0].bookmaker_odd}
             </p>
           </div>
           <p className='pb-5 border-b border-borderGray text-14 tablet:text-16 text-primary-gray'>
-            {format(parseISO(tipEventDatetime), dateFormat)}
+            {tipEventDatetime && format(parseISO(tipEventDatetime), dateFormat)}
           </p>
           <p className=' text-primary-gray mt-12 tablet:mt-16 text-14 hidden tablet:block mb-0 tablet:text-16 tablet:mb-16'>
             {tipContent}
@@ -79,30 +79,30 @@ export default function Card({
 
         <div className='flex items-stretch justify-center tablet:top-20 mt-12 gap-5 tablet:absolute tablet:left-[50%] tablet:absolute-x-center tablet:bottom-[46px] w-[240px] '>
           <div className='flex flex-col items-center gap-5 max-w-[150px] tablet:max-w-[100px] h-full'>
-            <Image
+            {tipTimes && <Image
               style={{ objectFit: 'contain', height: 33, width: 33 }}
               width={33}
               height={33}
               alt='logo da liga'
               src={tipTimes[0].teamLogo}
-            />
+            />}
             <p className=' text-center text-20 text-primary-dark tablet:text-white font-tittilium font-bold tablet:text-32'>
-              {tipTimes[0].title}
+              {tipTimes && tipTimes[0].title}
             </p>
           </div>
           <p className='pt-22 text-center text-20 text-primary-dark tablet:text-white font-tittilium font-bold tablet:text-32'>
             X
           </p>
           <div className='flex flex-col items-center gap-5 max-w-[150px] tablet:max-w-[100px] h-full'>
-            <Image
+            {tipTimes && <Image
               style={{ objectFit: 'contain', height: 33, width: 33 }}
               width={33}
               height={33}
               alt='logo da liga'
               src={tipTimes[1].teamLogo}
-            />
+            />}
             <p className=' text-center text-20 text-primary-dark tablet:text-white font-tittilium font-bold tablet:text-32'>
-              {tipTimes[1].title}
+              {tipTimes && tipTimes[1].title}
             </p>
           </div>
           <DropDownArrow
@@ -147,16 +147,16 @@ export default function Card({
             <Timer date={tipEventDatetime}></Timer>
             <div className='w-full mt-7 mb-2 max-w-[298px]'>
               {!!(
-                tipBetUrl || tipBookmakers[0].single_bookmaker[0].bookmakerUrl
+                tipBetUrl || tipBookmakers && tipBookmakers[0].single_bookmaker[0].bookmakerUrl
               ) && (
                 <Button
                   type='outside'
                   link={
                     tipBetUrl ||
-                    tipBookmakers[0].single_bookmaker[0].bookmakerUrl
+                    tipBookmakers && tipBookmakers[0].single_bookmaker[0].bookmakerUrl
                   }
                 >
-                  Apostar em {tipBookmakers[0].single_bookmaker[0].title}
+                  Apostar em {tipBookmakers && tipBookmakers[0].single_bookmaker[0].title}
                 </Button>
               )}
             </div>
