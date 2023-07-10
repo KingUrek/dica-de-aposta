@@ -55,7 +55,7 @@ export default function MultipleCard({
               return (
                 match.length >= 2 && (
                   <div
-                    key={match[0]?.databaseId + match[1]?.databaseId}
+                    key={match[0]?.databaseId + match[1]?.databaseId + match[0]?.title}
                     className='w-[142px] h-[42px] rounded flex items-center justify-center px-3 bg-primary border-2 border-white gap-y-7 gap-x-9'
                   >
                     <Image

@@ -20,6 +20,11 @@
     @apply text-14 tablet:text-16;
   }
 
+
+  dialog { 
+    border: none !important;
+  }
+
   html{
     font-size: 8px;
     height: 100%;
@@ -52,6 +57,12 @@
 
   .inner-shadown{
     box-shadow: inset 0px 5px 6px -5px  black;
+  }
+
+  .absolute-x-center{
+    left:50%;
+    transform:translateX(-50%)
+    
   }
 }
 /* .has-text-align-left {

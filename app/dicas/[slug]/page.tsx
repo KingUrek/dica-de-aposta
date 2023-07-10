@@ -16,10 +16,10 @@ import BackArrow from 'public/icons/BackArrow.svg';
 import TopTipsClient from 'components/TopTipsClient';
 import BackButton from 'components/ui/BackButton';
 
-export async function generateStaticParams() {
-  const tournaments = await getTournaments();
-  return tournaments.map(({ slug }) => slug);
-}
+// export async function generateStaticParams() {
+//   const tournaments = await getTournaments();
+//   return tournaments.map(({ slug }) => ({slug}));
+// }
 
 export default async function Page({ params }) {
   const tournaments = await getTournaments();

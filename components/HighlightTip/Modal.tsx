@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import TipCard from '../../components/TopTips/Card';
-import Container from '../ui/container';
+import TipCard from 'components/TopTips/ModalCard';
+import Container from 'components/ui/container';
 
 export default function Modal(props) {
   function closeDialog(e) {
