@@ -25,25 +25,23 @@ export default function Timer({ date }) {
     };
   }, []);
 
-  return <p>timer</p>;
-
-  // return (
-  //   <div className='flex gap-1'>
-  //     <p className='text-16 text-white bg-primary-dark font-bold rounded w-20 h-20 grid place-content-center '>
-  //       {days}
-  //     </p>
-  //     <p className=' text-40 leading-[30px] text-primary-dark'>:</p>
-  //     <p className='text-16 text-white bg-primary-dark font-bold rounded w-20 h-20 grid place-content-center '>
-  //       {hours}
-  //     </p>
-  //     <p className=' text-40 leading-[30px] text-primary-dark'>:</p>
-  //     <p className='text-16 text-white bg-primary-dark font-bold rounded w-20 h-20 grid place-content-center '>
-  //       {minutes}
-  //     </p>
-  //     <p className=' text-40 leading-[30px] text-primary-dark'>:</p>
-  //     <p className='text-16 text-white bg-primary-dark font-bold rounded w-20 h-20 grid place-content-center '>
-  //       {seconds}
-  //     </p>
-  //   </div>
-  // );
+  return (
+    <div className='flex gap-1'>
+      <p className='text-16 text-white bg-primary-dark font-bold rounded w-20 h-20 grid place-content-center '>
+        {days}
+      </p>
+      <p className=' text-40 leading-[30px] text-primary-dark'>:</p>
+      <p className='text-16 text-white bg-primary-dark font-bold rounded w-20 h-20 grid place-content-center '>
+        {hours}
+      </p>
+      <p className=' text-40 leading-[30px] text-primary-dark'>:</p>
+      <p className='text-16 text-white bg-primary-dark font-bold rounded w-20 h-20 grid place-content-center '>
+        {minutes}
+      </p>
+      <p className=' text-40 leading-[30px] text-primary-dark'>:</p>
+      <p className='text-16 text-white bg-primary-dark font-bold rounded w-20 h-20 grid place-content-center '>
+        {seconds}
+      </p>
+    </div>
+  );
 }
