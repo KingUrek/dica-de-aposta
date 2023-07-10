@@ -410,6 +410,7 @@ export async function getMultiples(slug='',activeOnly=false) {
             }
           }
           matches {
+            description
             match {
               databaseId
               title

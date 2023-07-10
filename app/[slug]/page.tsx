@@ -31,7 +31,7 @@ export default async function Page({ params }) {
       <Header slug={params.slug} tournaments={tournaments}></Header>
       {currentTournament?.parent && (
         <Container className='pt-12'>
-          <LeagueTag league={'Liga America'}></LeagueTag>
+          <LeagueTag league={currentTournament.name}></LeagueTag>
         </Container>
       )}
       <Container className='pt-19'>

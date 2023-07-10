@@ -98,10 +98,11 @@ export default function Modal({
                   </p>
                 </div>
               </div>
-              {matches.map(({ match }) => {
+              {matches.map(({ match, description }) => {
                 return (
                   <ModalMatch
                     match={match}
+                    description={description}
                     key={
                       match[0]?.databaseId +
                       match[1]?.databaseId +
