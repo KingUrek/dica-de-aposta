@@ -477,7 +477,7 @@ export async function getTournaments() {
   const data = await fetchAPI(
     `
     {
-      tournaments {
+      tournaments(first: 1000) {
         nodes {
           name
           slug
