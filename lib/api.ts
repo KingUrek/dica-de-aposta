@@ -561,4 +561,23 @@ export async function getTipBySlug(slug:string) {
   return data.tip;
 }
 
+export async function getQuestions() {
+  const data = await fetchAPI(
+    `
+    query questions {
+      questions {
+        nodes {
+          databaseId
+          title
+          questionAnswer
+        }
+      }
+    }
+`
+  );
+  return data.questions.nodes;
+}
+
+
+
 
