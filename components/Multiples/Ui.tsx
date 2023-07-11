@@ -18,7 +18,7 @@ export default async function MultiplesUi({slug}) {
         return <MultipleCard {...card}></MultipleCard>;
       })}
       </div>
-
+      
       <Button type='inside' link='/multiplas'>Ver Mais</Button>
     </Container>
   );

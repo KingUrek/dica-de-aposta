@@ -13,10 +13,12 @@ export default function MultipleCard({
   featuredImage,
   title,
   databaseId,
+  multipleExternal,
   ...rest
 }) {
   const dateFormat = "dd/MM/YYY 'às' k'h'mm";
   const modalId = `multiple-modal-${databaseId}`;
+
 
   return (
     <>
@@ -100,6 +102,7 @@ export default function MultipleCard({
         multipleBookmaker={multipleBookmaker}
         multipleProfit={multipleProfit}
         matches={matches}
+        multipleExternal={multipleExternal}
       ></Modal>
     </>
   );

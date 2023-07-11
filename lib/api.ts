@@ -403,6 +403,7 @@ export async function getMultiples(slug='',activeOnly=false) {
           databaseId
           title
           excerpt
+          multipleExternal
           featuredImage {
             node {
               altText
@@ -411,6 +412,12 @@ export async function getMultiples(slug='',activeOnly=false) {
           }
           matches {
             description
+            matchTime
+            matchTournament {
+              databaseId
+              slug
+              name
+            }
             match {
               databaseId
               title

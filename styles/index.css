@@ -20,6 +20,10 @@
     @apply text-14 tablet:text-16;
   }
 
+  *{
+    outline: none;
+  }
+
 
   dialog, form { 
     border: none !important;

@@ -10,14 +10,16 @@ import ModalButton from './ModalButton';
 
 export default async function HighlightTipUi({ slug }) {
   const data = await getHighlightTip(slug);
-  //TODO: mudar a query abaixo para buscar a dica por id em vez de buscar todas e filtrar
-  const modalInfo = (await getTipBySlug(data.slug))
-
-  const dateFormat = "dd 'de' MMM. 'de' YYY 'às' k'h'mm";
-
+  console.log(slug)
   if (!data) {
     return null;
   }
+  //TODO: mudar a query abaixo para buscar a dica por id em vez de buscar todas e filtrar
+  const modalInfo = (await getTipBySlug(data?.slug))
+
+  const dateFormat = "dd 'de' MMM. 'de' YYY 'às' k'h'mm";
+
+
 
   return (
     <>
