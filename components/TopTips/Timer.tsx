@@ -1,8 +1,9 @@
 'use client';
+import classNames from 'classnames';
 import { differenceInDays, differenceInSeconds } from 'date-fns';
 import React, { useEffect, useState } from 'react';
 
-export default function Timer({ date }) {
+export default function Timer({ date, style='modal' }) {
   const [[days, hours, minutes, seconds], setTimer] = useState(getTime(date));
   function getTime(date) {
     const totalSeconds = differenceInSeconds(new Date(date), new Date());
@@ -27,19 +28,33 @@ export default function Timer({ date }) {
 
   return (
     <div className='flex gap-1'>
-      <p className='text-16 text-white bg-primary-dark font-bold rounded w-20 h-20 grid place-content-center '>
+      <p className={classNames('text-16 text-white bg-primary-dark font-bold rounded w-20 h-20 grid place-content-center ',{
+        '!bg-white !text-primary-light':style==='single'
+      })}>
         {days}
       </p>
-      <p className=' text-40 leading-[30px] text-primary-dark'>:</p>
-      <p className='text-16 text-white bg-primary-dark font-bold rounded w-20 h-20 grid place-content-center '>
+      <p className={classNames(' text-40 leading-[30px] text-primary-dark',{
+        '!text-white':style==='single'
+      })}>:</p>
+      <p className={classNames('text-16 text-white bg-primary-dark font-bold rounded w-20 h-20 grid place-content-center ',{
+        '!bg-white !text-primary-light':style==='single'
+      })}>
         {hours}
       </p>
-      <p className=' text-40 leading-[30px] text-primary-dark'>:</p>
-      <p className='text-16 text-white bg-primary-dark font-bold rounded w-20 h-20 grid place-content-center '>
+      <p className={classNames(' text-40 leading-[30px] text-primary-dark',{
+        '!text-white':style==='single'
+      })}>:</p>
+      <p className={classNames('text-16 text-white bg-primary-dark font-bold rounded w-20 h-20 grid place-content-center ',{
+        '!bg-white !text-primary-light':style==='single'
+      })}>
         {minutes}
       </p>
-      <p className=' text-40 leading-[30px] text-primary-dark'>:</p>
-      <p className='text-16 text-white bg-primary-dark font-bold rounded w-20 h-20 grid place-content-center '>
+      <p className={classNames(' text-40 leading-[30px] text-primary-dark',{
+        '!text-white':style==='single'
+      })}>:</p>
+      <p className={classNames('text-16 text-white bg-primary-dark font-bold rounded w-20 h-20 grid place-content-center ',{
+        '!bg-white !text-primary-light':style==='single'
+      })}>
         {seconds}
       </p>
     </div>

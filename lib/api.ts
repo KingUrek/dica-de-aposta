@@ -522,8 +522,20 @@ export async function getTipBySlug(slug:string) {
       tip(id: "${slug}", idType: SLUG) {
         id
         content
+        modified
+        author {
+          node {
+            avatar {
+              url
+            }
+            name
+          }
+        }
         tipTournaments {
           name
+        }
+        tipLocalEvent {
+          title
         }
         tipBookmakers {
           bookmaker_odd

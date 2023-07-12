@@ -11,19 +11,12 @@ import Loading from './Loading';
 type Props = {
   slug?: string;
   isArchive?: boolean;
+  hideTitle?: boolean;
+
 };
 
-export default function TopGuessesUi({ slug, isArchive = false }: Props) {
-  // const data = (await getAllTips(slug)).nodes.filter(
-  //   ({ tipEventDatetime, content, slug }) => {
-  //     // return new Date(tipEventDatetime) >= new Date();
-  //     return true;
-  //   }
-  // );
-
-  // const data = (await getAllTips(slug)).nodes.filter(({ tipEventDatetime }) => {
-  //   return new Date(tipEventDatetime) >= new Date();
-  // });
+export default function TopGuessesUi({ slug, isArchive = false, hideTitle=false }: Props) {
+  console.log(slug)
 
   const [cards, setCards] = useState([]);
   const [page, setPage] = useState(0);
@@ -47,9 +40,9 @@ export default function TopGuessesUi({ slug, isArchive = false }: Props) {
   return (
     (
       <Container>
-        <h2 className=' text-primary-light mb-12 tablet:mb-[56px] text-center tablet:text-40'>
+        {!hideTitle && <h2 className=' text-primary-light mb-12 tablet:mb-[56px] text-center tablet:text-40'>
           Principais Palpites
-        </h2>
+        </h2>}
         {loading ? (
           <Loading></Loading>
         ) : (

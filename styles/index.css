@@ -35,6 +35,17 @@
   .turn-white {
     filter: grayscale(1) brightness(500);
   }
+
+  .single-content h1,h2,h3,h4 {
+    @apply text-primary-light;
+  }
+  .single-content strong {
+    @apply  bg-orange bg-opacity-30;
+  }
+
+  .single-content a {
+    @apply  text-orange;
+  }
   
 
 
