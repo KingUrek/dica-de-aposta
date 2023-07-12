@@ -6,6 +6,7 @@ import { format, parseISO } from 'date-fns';
 import classNames from 'classnames';
 import { ModalMatch } from './Components';
 import Button from 'components/ui/button';
+import Close from 'public/icons/ClearSearch.svg'
 
 export default function Modal({
   modalId,
@@ -42,11 +43,11 @@ export default function Modal({
       style={{ padding: 0, border: 0 }}
       id={modalId}
       onClick={closeDialog}
-      className='backdrop bg-transparent'
+      className='backdrop bg-transparent hide-scrollbar'
     >
       <form method='dialog'>
         <Container>
-          <div className='rounded bg-primary pt-4 overflow-hidden min-w-[375px] tablet:min-w-[750px]'>
+          <div className='rounded bg-primary-dark pt-4 overflow-hidden min-w-[375px] tablet:min-w-[750px]'>
             <div className='relative h-26 w-full tablet:h-[90px]'>
               <Image
                 style={{ objectFit: 'cover' }}
@@ -55,14 +56,18 @@ export default function Modal({
                 src={featuredImage?.node.sourceUrl}
               ></Image>
               <div className='left-0 right-0 top-0 bottom-0 bg-black-darkest bg-opacity-50 absolute hidden tablet:block'></div>
+              <button>
+              <Close className='turn-white absolute z-30 right-8 top-7 cursor-pointer' ></Close>
+
+              </button>
             </div>
             <div className=' px-11 py-7 bg-gray-tipbg tablet:bg-white'>
               <p className='pb-5 border-b mb-12 text-primary-gray border-borderGray mt-5 tablet:max-w-[368px] tablet:'>
                 Aposte até {format(parseISO(multipleUntil), dateFormat)}
               </p>
-              <div className='flex items-center justify-between mb-15 tablet:justify-start tablet:gap-12'>
+              <div className='flex items-center justify-between mb-12 tablet:justify-start tablet:gap-12'>
                 <p className='font-bold text-primary-gray tablet:text-20'>Apostador</p>
-                <div className='w-[92px] h-[42px] rounded flex items-center justify-center px-3 bg-primary border-2 border-primary-gray tablet:border-primary'>
+                <div className='w-[92px] h-[42px] rounded flex items-center justify-center px-3 bg-primary-dark border-2 border-primary-gray tablet:border-primary-dark'>
                   <Image
                     width={50}
                     height={15}
@@ -73,7 +78,7 @@ export default function Modal({
               </div>
               <div className='flex justify-between gap-32 tablet:justify-start tablet:gap-16'>
                 <div className=''>
-                  <p className='font-bold text-primary-gray tablet:text-20'>Aposte</p>
+                  <p className='font-bold text-primary-gray tablet:text-20'>Aposte </p>
                   <ul className='bg-[#F3F3F3] rounded w-fit flex flex-col gap-7 py-4 mt-7 tablet:border tablet:border-[#D0D0D0]'>
                     {tableValues.map((value) => {
                       return (
@@ -82,7 +87,7 @@ export default function Modal({
                           className={classNames(
                             'text-primary-gray cursor-pointer pl-5 pr-20',
                             {
-                              '!text-white rounded-sm bg-primary':
+                              '!text-white rounded-sm bg-primary-dark':
                                 value === selectedOption,
                             }
                           )}
@@ -94,7 +99,7 @@ export default function Modal({
                     })}
                   </ul>
                 </div>
-                <div className=' bg-primary rounded-sm flex flex-col items-center justify-center h-fit px-6 py-4 my-auto tablet:flex-row tablet:gap-16 tablet:px-14 tablet:py-6'>
+                <div className=' bg-primary-dark rounded-sm flex flex-col items-center justify-center h-fit px-6 py-4 my-auto tablet:flex-row tablet:gap-16 tablet:px-14 tablet:py-6'>
                   <p className='text-18 font-bold text-white tablet:text-20'>Retorno</p>
                   <p className='text-20 font-bold text-white tablet:text-28'>
                     {getProfitValue(selectedOption)}
