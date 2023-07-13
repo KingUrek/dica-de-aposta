@@ -25,7 +25,7 @@ export default function Card({
 
   return (
     <div className='relative w-full bg-primary-dark rounded pt-4 overflow-hidden tablet:flex'>
-      <div className='relative h-32 w-full tablet:w-[300px] tablet:flex-shrink-0 tablet:h-auto tablet:mt-[-8px]'>
+      <div className='relative h-32 w-full tablet:w-[360px] tablet:flex-shrink-0 tablet:h-auto tablet:mt-[-8px]'>
         <Image
           style={{ objectFit: 'cover' }}
           fill
@@ -77,8 +77,8 @@ export default function Card({
           </p>
         </div>
 
-        <div className='flex items-stretch justify-center tablet:top-20 mt-12 gap-5 tablet:absolute tablet:left-[30px] tablet:bottom-[46px] w-[240px] '>
-          <div className='flex flex-col items-center gap-9 max-w-[100px] h-full'>
+        <div onClick={() => setIsOpen(!isOpen)} className='flex items-stretch tablet:justify-center mt-12 gap-5 tablet:absolute tablet:left-[30px] tablet:bottom-[46px] tablet:w-[300px] tablet:absolute-y-center tablet:h-min '>
+          <div className='flex flex-col items-center gap-9 max-w-[150px] h-full'>
             <Image
               style={{ objectFit: 'contain', height: 40, width: 40 }}
               width={33}
@@ -93,7 +93,7 @@ export default function Card({
           <p className=' pt-[59px] text-center text-20 text-primary-dark tablet:text-white font-tittilium font-bold'>
             X
           </p>
-          <div className='flex flex-col items-center gap-9 max-w-[100px] h-full'>
+          <div className='flex flex-col items-center gap-9 max-w-[150px] h-full'>
             <Image
               style={{ objectFit: 'contain', height: 40, width: 40 }}
               width={33}
@@ -106,12 +106,12 @@ export default function Card({
             </p>
           </div>
           <DropDownArrow
-            className='mb-5 ml-auto cursor-pointer tablet:hidden mt-auto'
-            onClick={() => setIsOpen(!isOpen)}
+            className='mb-5 ml-5 cursor-pointer tablet:hidden mt-[69px]'
+            
           ></DropDownArrow>
         </div>
         <div
-          className={cn('w-full overflow-hidden tablet:max-h-none tablet:w-[298px] ml-auto', {
+          className={cn('w-full overflow-hidden tablet:max-h-none tablet:w-[220px]  tabletg:w-[298px] ml-auto flex-shrink-0', {
             'max-h-0': !isOpen,
           })}
         >

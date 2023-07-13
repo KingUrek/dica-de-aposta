@@ -36,7 +36,7 @@ export default function Button({
       <Link href={link} target='_blank'>
         <div
           className={
-            'text-16 tablet:text-20 bg-primary-invert !leading-[16px] text-white rounded py-8 tablet:py-12 text-center font-bold' +
+            'text-16 tablet:text-20 bg-primary-invert !leading-[135%] text-white rounded py-8 tablet:py-12 text-center font-bold' +
             ' ' +
             className
           }
@@ -50,7 +50,7 @@ export default function Button({
   if (type === 'modal') {
     return (<div
       className={
-        'text-16 tablet:text-20 bg-primary-invert !leading-[16px] text-white rounded py-8 tablet:py-12 text-center font-bold cursor-pointer' +
+        'text-16 tablet:text-20 bg-primary-invert !leading-[135%] text-white rounded py-8 tablet:py-12 text-center font-bold cursor-pointer' +
         ' ' +
         className
       }
